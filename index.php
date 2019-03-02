@@ -32,6 +32,10 @@
                     <div class="descricao_cartao">
                         Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
                     </div>
+
+                    <div class="tempo_cartao">
+                        <i class="fa fa-address-book" aria-hidden="true"><span>5 horas fev</span></i>
+                    </div>
                 </div>
             </div>
             

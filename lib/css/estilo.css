@@ -90,7 +90,20 @@
 
 .descricao_cartao{
     
+    /* max-width: 200ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+    
     text-align: left;
     padding-top: 20px;
     color: #000;
+}
+
+.tempo_cartao{
+    
+    text-align: right;
+    font-size: 14px;
+    padding: 5px 5px;
+    color: #bbbbbb;
 }
