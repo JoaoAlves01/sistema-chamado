@@ -3,12 +3,14 @@
 ?>
         <div class="linha">
 
+            <!-- Card do chamado -->
             <div class="box_pedido urgente" id="urgente" data-id="urgente">
                 <div class="linha">
                     <span class="titulo_box">Pedidos Urgentes</span>
-                </div>
-
+                </div>                
                 <div class="capsula_pedidos urgente_scroll">
+
+                    <!-- item Cartao -->
                     <a href="#">
                         <div class="box_solicitacao">
                             <div class="linha_vertical">
@@ -20,18 +22,17 @@
                                     <img src="img/img_cartao.jpg" alt="img_cartao" />
                                 </div>
                             </div>
-                            
                             <div class="descricao_cartao">
                                 Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
                             </div>
-
                             <div class="tempo_cartao">
                                 <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
                             </div>
                         </div>
                     </a>
-                </div>
+                    <!-- Fim item Cartao -->
 
+                </div>            
                 <div class="linha_vertical">
                     <button type="button" class="botao novo_cartao" id="botao_novo_cartao" name="botao_novo_cartao">Adicionar novo cartão</button>
                 </div>
@@ -51,6 +52,7 @@
                     </div>
                 </form>
             </div>
+            <!-- Fim do chamado -->
 
             <div class="box_pedido andamento" id="andamento" data-id="andamento">
                 <div class="linha">
