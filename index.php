@@ -8,14 +8,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
     <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
-    <script src="lib/js/controle.js"></script>
+    <script src="lib/js/controle.js"></script> 
 </head>
 <body>
     <div class="envelope">
         <div class="linha">
             <div class="box_pedido urgente">
                 <div class="linha">
-                    <span class="titulo_box">Pedidos Urgentes <span class="titulo_box_quant">(06)</span></span>
+                    <span class="titulo_box">Pedidos Urgentes1 <span class="titulo_box_quant">(06)</span></span>
                 </div>
 
                 <div class="box_solicitacao">
