@@ -31,12 +31,19 @@
             </form>
 
             <div class="container_comentario">
+                <form method="POST" action="">
+                    <div class="alinha_botao">
+                        <button type="submit" class="botao botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        <button type="submit" class="botao botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    </div>
+                </form>
+
                 <div class="linha">
                     <div class="img_cartao img_comentario">
                         <img src="img/img_cartao.jpg" alt="img_cartao" />
                     </div>
                     <span class="nome_usuario_comentario">João Pedro Alves de Sousa</span>
-                    <span class="data_usuario_comentario">7:30 AM Hoje</span>
+                    <span class="data_usuario_comentario"> 7:30 AM Hoje</span>
                     <p class="comentario_cartao">
                     Minions ipsum para tú enim tank yuuu! Pepete reprehenderit. 
                     Sed baboiii bappleees aaaaaah poopayee occaecat ut. 
@@ -52,15 +59,16 @@
                     tulaliloo.
                     </p>
                 </div>
-                <form method="POST" action="">
-                    <div class="alinha_botao">
-                        <button type="submit" class="botao botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        <button type="submit" class="botao botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    </div>
-                </form>
             </div>
 
             <div class="container_comentario esquerda_comentario">
+                <form method="POST" action="">
+                    <div class="alinha_botao">
+                        <button type="submit" class="botao botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        <button type="submit" class="botao botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                    </div>
+                </form>
+                
                 <div class="linha">
                     <div class="img_cartao img_comentario">
                         <img src="img/img_cartao.jpg" alt="img_cartao" />
@@ -82,13 +90,6 @@
                     tulaliloo.
                     </p>
                 </div>
-
-                <form method="POST" action="">
-                    <div class="alinha_botao">
-                        <button type="submit" class="botao botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        <button type="submit" class="botao botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                    </div>
-                </form>
             </div>
 
             <div class="container_novo_comentario">

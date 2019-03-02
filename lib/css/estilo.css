@@ -513,6 +513,10 @@
     border: 1px solid #bbbbbb;
 }
 
+#linha_post{
+    border-bottom: 1px solid #d6d6d6;
+}
+
 /*Config das caixas de comentario*/
 .container_comentario,
 .container_novo_comentario{
@@ -520,10 +524,6 @@
     position: relative;
     padding: 10px 20px 10px 20px;
     background: #fff;
-}
-
-#linha_post{
-    border-bottom: 1px solid #d6d6d6;
 }
 
 /*Configo do titulo*/
@@ -548,15 +548,15 @@
 
 .botao_icone_comentario{
     position: absolute;
-    right: 20px;
-    bottom: 15px;
+    left: 20px;
+    top: 80px;
     width: 10px;
     height: 10px;
     background: none;
 }
 
 .botao_icone_comentario:last-child{
-    right: 40px;
+    left: 40px;
 }
 
 .enviar_msg{
@@ -565,6 +565,8 @@
 }
 
 .img_comentario{
+    width: 70px;
+    height: 70px;
     position: absolute;
     top: 50px;
     margin-left: 0;
@@ -583,18 +585,29 @@
 
 .nome_usuario_comentario{
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 40px;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 400;
     margin-top: 5px;
-    margin-left: 40px;
+    margin-left: 60px;
     margin-bottom: 10px;
-    color: #234356;
+    color: #fff;
+    z-index: 99995;
 }
 
 .data_usuario_comentario{
-    font-size: 12px;
-    margin-right: 0;
-    color: #777;
+
+    position: relative;
+    top: 45px;
+    font-size: 10px;
+    font-weight: 300;
+    margin-right: 60px;
+    color: #fff;
+    z-index: 99997;
 }
 
 .comentario_cartao,
@@ -605,6 +618,7 @@
     margin: 0 auto;
     margin-bottom: 20px;
     padding: 15px;
+    padding-top: 40px;
     border-radius: 10px;
     background: #00A7D0;
     color: #fff;
