@@ -600,9 +600,13 @@
 .esquerda_comentario .nome_usuario_comentario,
 .esquerda_comentario .data_usuario_comentario,
 .esquerda_comentario .comentario_cartao,
-.esquerda_comentario .botao_icone_comentario{
+.esquerda_comentario form{
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
+}
+
+.esquerda_comentario form{
+    margin-left: -20px;
 }
