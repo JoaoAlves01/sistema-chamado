@@ -15,7 +15,7 @@
         <div class="linha">
             <div class="box_pedido urgente">
                 <div class="linha">
-                    <span class="titulo_box">Pedidos Urgentes1 <span class="titulo_box_quant">(06)</span></span>
+                    <span class="titulo_box">Pedidos Urgentes <span class="titulo_box_quant">(06)</span></span>
                 </div>
 
                 <div class="box_solicitacao">
