@@ -12,12 +12,35 @@
     <script src="lib/js/controle.js"></script> 
 </head>
 <body>
+    <div class="faixa_info">        
+        <div class="box_pontos">
+            <div class="box_trofeu">
+                <i class="fa fa-frown-o" aria-hidden="true"></i>
+            </div>
+            <span>Urgente<small><div class="num_urgente" id="num_urgente">38</div></small></span>
+        </div>
+
+        <div class="box_pontos">
+            <div class="box_trofeu">
+                <i class="fa fa-cogs" aria-hidden="true"></i>
+            </div>
+            <span>Em andamento<small>50</small></span>
+        </div>
+
+        <div class="box_pontos">
+            <div class="box_trofeu">
+                <i class="fa fa-smile-o" aria-hidden="true"></i>
+            </div>
+            <span>Concluído<small>38</small></span>
+        </div>
+    </div>
+                
     <div class="envelope">
         <div class="linha">
 
             <div class="box_pedido urgente" id="urgente" data-id="urgente">
                 <div class="linha">
-                    <span class="titulo_box">Pedidos Urgentes <span class="titulo_box_quant">(06)</span></span>
+                    <span class="titulo_box">Pedidos Urgentes</span>
                 </div>
 
                 <div class="capsula_pedidos urgente_scroll">
@@ -63,7 +86,7 @@
 
             <div class="box_pedido andamento" id="andamento" data-id="andamento">
                 <div class="linha">
-                    <span class="titulo_box">Pedidos em andamento <span class="titulo_box_quant">(04)</span></span>
+                    <span class="titulo_box">Pedidos em andamento</span>
                 </div>
 
                 <div class="capsula_pedidos andamento_scroll">
@@ -109,7 +132,7 @@
 
             <div class="box_pedido concluido" id="concluido" data-id="concluido">
                 <div class="linha">
-                    <span class="titulo_box">Pedidos concluidos <span class="titulo_box_quant">(10)</span></span>
+                    <span class="titulo_box">Pedidos concluidos</span>
                 </div>
 
                 <div class="capsula_pedidos concluido_scroll">

@@ -44,7 +44,6 @@
     width: 100px;
     height: 28px;
     text-align: center;
-    font-family: Roboto;
     margin: 0 auto;
     margin-top: 20px;
     border: none;
@@ -53,6 +52,72 @@
     cursor: pointer;
 }
 
+/*Config da faixa info*/
+.faixa_info{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto;
+    padding: 20px;
+    background: #009ABF;
+}
+
+.faixa_info:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: .5px;
+    box-shadow: 0 0 25px 4px rgba(0, 0, 0, .9);
+}
+
+.box_pontos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_pontos span{
+    vertical-align: top;
+    text-align: left;
+    font-size: 14px;
+    padding-left: 10px;
+    color: #fff;
+}
+
+.box_pontos small{
+    display: block;
+    font-size: 24px;
+}
+
+.box_trofeu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .3);
+}
+
+.box_trofeu i{
+    position: relative;
+    font-size: 45px;
+    color: #fff;
+}
+
+#trofeu:after{
+    position: absolute;
+    top: 40px;
+    content: "\f005";
+    font-family: fontawesome;
+    font-size: 10px;
+    color: #009ABF;
+
+}
+
+/*Cores dos quadros*/
 .urgente{
     background: #dd4b39;
     box-shadow: 0 0 20px 3px rgba(34, 45, 50, .2);
@@ -66,12 +131,14 @@
     background: #00a65a;
 }
 
+/*Config dos quadros*/
 .box_pedido{
 
     width: 30%;
     height: 100%;
     font-size: 16px;
     margin: 0 auto;
+    margin-top: 10px;
     padding: 10px 5px 20px 5px;
     border-radius: 5px;
     color: #fff;
@@ -133,6 +200,7 @@
     padding: 5px 0;
 }
 
+/*Config dos cartoes*/
 .box_solicitacao{
     width: 93.5%;
     margin: 0 auto;
