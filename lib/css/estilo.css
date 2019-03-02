@@ -34,7 +34,7 @@
     box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,.08) inset;
     margin: 0 auto;
     margin-left: 0;
-    margin-bottom: 10px;
+    margin-bottom: 40px;
     font-size: 14px;
     outline: 0;
     transition: .3s;
@@ -59,7 +59,7 @@
     align-items: center;
     justify-content: center;
     font-family: Roboto;
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
     background: #009ABF;
 }
 
@@ -352,4 +352,89 @@
     25% {transform: rotate(-3deg);}
     50% {transform: rotate(3deg);}
 	100% {transform: rotate(-3deg);}
+}
+
+/*Config da faixa do cartao*/
+#faixa_cartao{
+
+    margin: 0 auto;
+    margin-left: 0;
+}
+
+#faixa_cartao .titulo_cartao{
+
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    font-size: 22px;
+    padding-left: 20px;
+}
+
+#faixa_voltar{
+
+    margin: 0 auto;
+    margin-right: 0;
+}
+
+#faixa_voltar .box_trofeu{
+    
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+}
+
+#faixa_voltar .box_trofeu i{
+
+    font-size: 30px;
+}
+
+#faixa_voltar .box_trofeu:hover{
+    background: rgba(255, 255, 255, .2);
+}
+
+/*Config dos dados do cartao*/
+.container_info_cartao{
+    position: relative;
+    width: 90%;
+    font-family: Roboto;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    background: #ffff;
+}
+
+.container_info_cartao:before{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 70px;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #bbbbbb;
+}
+
+#img_cartao{
+    width: 50px;
+    height: 50px;
+    margin-left: 0;
+}
+
+.nome_usuario_cartao{
+
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #72AFD2;
+}
+
+.nome_usuario_cartao small{
+    display: block;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #bbbbbb;
 }
