@@ -5,6 +5,7 @@
 
 .envelope{
     
+    min-height: 100vh;
     font-family: Roboto;
     padding: 20px 30px;
     background: #dcdcdc;
@@ -20,6 +21,35 @@
 .linha_vertical{
     justify-content: center;
     align-items: center;
+}
+
+.campo_sistema
+{
+    display: block;
+    width: 95%;
+    padding: .5rem;
+    border-radius: 3px;
+    line-height: 1.5;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,.08) inset;
+    margin: 0 auto;
+    margin-left: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    outline: 0;
+    transition: .3s;
+}
+
+.botao{
+    width: 100px;
+    height: 28px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    cursor: pointer;
 }
 
 .urgente{
@@ -38,9 +68,10 @@
 .box_pedido{
 
     width: 30%;
+    height: 100%;
     font-size: 16px;
     margin: 0 auto;
-    padding: 10px 5px 5px 5px;
+    padding: 10px 5px 20px 5px;
     border-radius: 5px;
     color: #fff;
 }
@@ -61,6 +92,13 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background: #fff;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.box_solicitacao:hover{
+
+    background: #f5f6f7;
 }
 
 .titulo_cartao{
@@ -101,4 +139,66 @@
     font-size: 14px;
     padding: 5px 5px;
     color: #bbbbbb;
+}
+
+.tempo_cartao span{
+    padding-left: 5px;
+    font-family: Roboto;
+}
+
+.novo_cartao{
+
+    width: 160px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background: none;
+}
+
+.novo_cartao:hover{
+    color: #dcdcdc;
+}
+
+.salvar_cartao{
+
+    width: 120px;
+    height: 30px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-left: 0;
+    color: #fff;
+    background: #B13C2E;
+}
+
+.fechar_novo_cartao{
+
+    width: auto;
+    font-size: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    color: #fff;
+    background: none;
+}
+
+.fechar_novo_cartao:hover{
+    color: #B13C2E;
+}
+
+.salvar_cartao:hover{
+    
+    animation-name: mexer_botao;
+	animation-duration: .3s;
+	animation-timing-function: ease-out;
+}
+
+#formulario_novo_cartao{
+    display: none;
+}
+
+@keyframes mexer_botao{
+
+    0% {transform: rotate(3deg);}
+    25% {transform: rotate(-3deg);}
+    50% {transform: rotate(3deg);}
+	100% {transform: rotate(-3deg);}
 }
