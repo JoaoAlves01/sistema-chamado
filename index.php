@@ -8,186 +8,150 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
     <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
+    <script src="lib/js/jquery.js"></script> 
     <script src="lib/js/controle.js"></script> 
 </head>
 <body>
     <div class="envelope">
         <div class="linha">
-            <div class="box_pedido urgente">
+
+            <div class="box_pedido urgente" id="urgente" data-id="urgente">
                 <div class="linha">
                     <span class="titulo_box">Pedidos Urgentes <span class="titulo_box_quant">(06)</span></span>
                 </div>
 
-                <div class="box_solicitacao">
-                    <div class="linha_vertical">
-                        <span class="titulo_cartao">
-                            Titulo Cartão
-                        </span>
+                <div class="capsula_pedidos urgente_scroll">
+                    <div class="box_solicitacao">
+                        <div class="linha_vertical">
+                            <span class="titulo_cartao">
+                                Titulo Cartão
+                            </span>
 
-                        <div class="img_cartao">
-                            <img src="img/img_cartao.jpg" alt="img_cartao" />
+                            <div class="img_cartao">
+                                <img src="img/img_cartao.jpg" alt="img_cartao" />
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="descricao_cartao">
-                        Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
-                    </div>
-
-                    <div class="tempo_cartao">
-                        <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
-                    </div>
-                </div>
-
-                <div class="box_solicitacao">
-                    <div class="linha_vertical">
-                        <span class="titulo_cartao">
-                            Titulo Cartão
-                        </span>
-
-                        <div class="img_cartao">
-                            <img src="img/img_cartao.jpg" alt="img_cartao" />
+                        
+                        <div class="descricao_cartao">
+                            Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
                         </div>
-                    </div>
-                    
-                    <div class="descricao_cartao">
-                        Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
-                    </div>
 
-                    <div class="tempo_cartao">
-                        <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
+                        <div class="tempo_cartao">
+                            <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
+                        </div>
                     </div>
                 </div>
 
                 <div class="linha_vertical">
-                    <button type="button" class="botao novo_cartao" id="botao_novo_cartao" name="botao_novo_cartao" onclick="adicionarNovoCartao();">Adicionar novo cartão</button>
+                    <button type="button" class="botao novo_cartao" id="botao_novo_cartao" name="botao_novo_cartao">Adicionar novo cartão</button>
                 </div>
 
-                <form method="POST" action="" id="formulario_novo_cartao">
+                <form method="POST" action="" class="formulario_novo_cartao">
                     <div class="linha_vertical">
-                        <button type="button" class="botao fechar_novo_cartao" id="fechar_novo_cartao" name="fechar_novo_cartao" onclick="fecharNovoCartao();"><i class="fa fa-times" aria-hidden="true"></i></button>
+                        <button type="button" class="botao fechar fechar_novo_cartao_urgente" id="fechar_novo_cartao_urgente" name="fechar_novo_cartao_urgente"><i class="fa fa-times" aria-hidden="true"></i></button>
                     </div>
 
                     <div class="linha_vertical" id="adicionar_cartao">
-                        <input type="text" class="campo_sistema" id="nome_cartao" name="nome_cartao" placeholder="Informe um título..." />
+                        <input type="text" class="campo_sistema campo_new_cartao" id="nome_cartao_urgente" name="nome_cartao_urgente" placeholder="Informe um título..." />
                     </div>
 
                     <div class="linha_vertical">
-                        <button type="button" class="botao salvar_cartao" id="botao_adicionar_cartao" name="botao_adicionar_cartao">Salvar cartão</button>
+                        <button type="button" class="botao salvar_cartao_urgente" name="botao_adicionar_cartao_urgente">Salvar cartão</button>
                     </div>
                 </form>
             </div>
 
-            <!-- <div class="box_pedido andamento">
+            <div class="box_pedido andamento" id="andamento" data-id="andamento">
                 <div class="linha">
-                    <span class="titulo_box">Pedidos Urgentes <span class="titulo_box_quant">(06)</span></span>
+                    <span class="titulo_box">Pedidos em andamento <span class="titulo_box_quant">(04)</span></span>
                 </div>
 
-                <div class="box_solicitacao">
-                    <div class="linha_vertical">
-                        <span class="titulo_cartao">
-                            Titulo Cartão
-                        </span>
+                <div class="capsula_pedidos andamento_scroll">
+                    <div class="box_solicitacao">
+                        <div class="linha_vertical">
+                            <span class="titulo_cartao">
+                                Titulo Cartão
+                            </span>
 
-                        <div class="img_cartao">
-                            <img src="img/img_cartao.jpg" alt="img_cartao" />
+                            <div class="img_cartao">
+                                <img src="img/img_cartao.jpg" alt="img_cartao" />
+                            </div>
+                        </div>
+                        
+                        <div class="descricao_cartao">
+                            Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
+                        </div>
+
+                        <div class="tempo_cartao">
+                            <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
                         </div>
                     </div>
-                    
-                    <div class="descricao_cartao">
-                        Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
+                </div>
+
+                <div class="linha_vertical">
+                    <button type="button" class="botao novo_cartao" id="botao_novo_cartao" name="botao_novo_cartao">Adicionar novo cartão</button>
+                </div>
+
+                <form method="POST" action="" class="formulario_novo_cartao">
+                    <div class="linha_vertical">
+                        <button type="button" class="botao fechar fechar_novo_cartao_andamento" id="fechar_novo_cartao_andamento" name="fechar_novo_cartao_andamento"><i class="fa fa-times" aria-hidden="true"></i></button>
                     </div>
 
-                    <div class="tempo_cartao">
-                        <i class="fa fa-address-book" aria-hidden="true"><span>5 horas fev</span></i>
+                    <div class="linha_vertical" id="adicionar_cartao">
+                        <input type="text" class="campo_sistema campo_new_cartao" id="nome_cartao_andamento" name="nome_cartao_andamento" placeholder="Informe um título..." />
                     </div>
-                </div>
+
+                    <div class="linha_vertical">
+                        <button type="button" class="botao salvar_cartao_andamento" name="botao_adicionar_cartao_andamento">Salvar cartão</button>
+                    </div>
+                </form>
             </div>
 
-            <div class="box_pedido concluido">
+            <div class="box_pedido concluido" id="concluido" data-id="concluido">
                 <div class="linha">
-                    <span class="titulo_box">Pedidos Urgentes <span class="titulo_box_quant">(06)</span></span>
+                    <span class="titulo_box">Pedidos concluidos <span class="titulo_box_quant">(10)</span></span>
                 </div>
 
-                <div class="box_solicitacao">
-                    <div class="linha_vertical">
-                        <span class="titulo_cartao">
-                            Titulo Cartão
-                        </span>
+                <div class="capsula_pedidos concluido_scroll">
+                    <div class="box_solicitacao">
+                        <div class="linha_vertical">
+                            <span class="titulo_cartao">
+                                Titulo Cartão
+                            </span>
 
-                        <div class="img_cartao">
-                            <img src="img/img_cartao.jpg" alt="img_cartao" />
+                            <div class="img_cartao">
+                                <img src="img/img_cartao.jpg" alt="img_cartao" />
+                            </div>
+                        </div>
+                        
+                        <div class="descricao_cartao">
+                            Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
+                        </div>
+
+                        <div class="tempo_cartao">
+                            <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
                         </div>
                     </div>
-                    
-                    <div class="descricao_cartao">
-                        Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
-                    </div>
-
-                    <div class="tempo_cartao">
-                        <i class="fa fa-address-book" aria-hidden="true"><span>5 horas fev</span></i>
-                    </div>
                 </div>
 
-                <div class="box_solicitacao">
+                <div class="linha_vertical">
+                    <button type="button" class="botao novo_cartao" id="botao_novo_cartao" name="botao_novo_cartao">Adicionar novo cartão</button>
+                </div>
+
+                <form method="POST" action="" class="formulario_novo_cartao">
                     <div class="linha_vertical">
-                        <span class="titulo_cartao">
-                            Titulo Cartão
-                        </span>
-
-                        <div class="img_cartao">
-                            <img src="img/img_cartao.jpg" alt="img_cartao" />
-                        </div>
-                    </div>
-                    
-                    <div class="descricao_cartao">
-                        Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
+                        <button type="button" class="botao fechar fechar_novo_cartao_concluido" id="fechar_novo_cartao_concluido" name="fechar_novo_cartao_concluido"><i class="fa fa-times" aria-hidden="true"></i></button>
                     </div>
 
-                    <div class="tempo_cartao">
-                        <i class="fa fa-address-book" aria-hidden="true"><span>5 horas fev</span></i>
+                    <div class="linha_vertical" id="adicionar_cartao">
+                        <input type="text" class="campo_sistema campo_new_cartao" id="nome_cartao_concluido" name="nome_cartao_concluido" placeholder="Informe um título..." />
                     </div>
-                </div>
 
-                <div class="box_solicitacao">
                     <div class="linha_vertical">
-                        <span class="titulo_cartao">
-                            Titulo Cartão
-                        </span>
-
-                        <div class="img_cartao">
-                            <img src="img/img_cartao.jpg" alt="img_cartao" />
-                        </div>
+                        <button type="button" class="botao salvar_cartao_concluido" name="botao_adicionar_cartao_concluido">Salvar cartão</button>
                     </div>
-                    
-                    <div class="descricao_cartao">
-                        Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
-                    </div>
-
-                    <div class="tempo_cartao">
-                        <i class="fa fa-address-book" aria-hidden="true"><span>5 horas fev</span></i>
-                    </div>
-                </div>
-
-                <div class="box_solicitacao">
-                    <div class="linha_vertical">
-                        <span class="titulo_cartao">
-                            Titulo Cartão
-                        </span>
-
-                        <div class="img_cartao">
-                            <img src="img/img_cartao.jpg" alt="img_cartao" />
-                        </div>
-                    </div>
-                    
-                    <div class="descricao_cartao">
-                        Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
-                    </div>
-
-                    <div class="tempo_cartao">
-                        <i class="fa fa-address-book" aria-hidden="true"><span>5 horas fev</span></i>
-                    </div>
-                </div>
-            </div> -->
+                </form>
+            </div>
         </div>
     </div>
 </body>

@@ -44,6 +44,7 @@
     width: 100px;
     height: 28px;
     text-align: center;
+    font-family: Roboto;
     margin: 0 auto;
     margin-top: 20px;
     border: none;
@@ -76,16 +77,64 @@
     color: #fff;
 }
 
+.capsula_pedidos{
+
+    max-height: 65vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+/*Scroll urgente*/
+.urgente_scroll::-webkit-scrollbar 
+{ 
+    width: 6px; 
+    background:#cb4737; 
+}
+
+.urgente_scroll::-webkit-scrollbar-thumb 
+{ 
+    border-radius: 10px; 
+    background:#B13C2E;
+}
+
+/*Scroll andamento*/
+.andamento_scroll::-webkit-scrollbar 
+{ 
+    width: 6px; 
+    background:#d48911; 
+}
+
+.andamento_scroll::-webkit-scrollbar-thumb 
+{ 
+    border-radius: 10px; 
+    background:#C27D0E;
+}
+
+/*Scroll concluido*/
+.concluido_scroll::-webkit-scrollbar 
+{ 
+    width: 6px; 
+    background:#019551; 
+}
+
+.concluido_scroll::-webkit-scrollbar-thumb 
+{ 
+    border-radius: 10px; 
+    background:#008548;
+}
+
 .titulo_box{
     
     text-align: left;
     font-weight: 400;
     margin: 0 auto;
     margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 5px 0;
 }
 
 .box_solicitacao{
-    width: 95%;
+    width: 93.5%;
     margin: 0 auto;
     margin-top: 10px;
     padding: 10px 10px;
@@ -94,6 +143,11 @@
     background: #fff;
     cursor: pointer;
     transition: .3s;
+}
+
+.box_solicitacao:first-child{
+
+    margin-top: 0;
 }
 
 .box_solicitacao:hover{
@@ -159,7 +213,9 @@
     color: #dcdcdc;
 }
 
-.salvar_cartao{
+.salvar_cartao_urgente,
+.salvar_cartao_andamento,
+.salvar_cartao_concluido{
 
     width: 120px;
     height: 30px;
@@ -170,7 +226,10 @@
     background: #B13C2E;
 }
 
-.fechar_novo_cartao{
+/*Botao urgente*/
+.fechar_novo_cartao_urgente,
+.fechar_novo_cartao_andamento,
+.fechar_novo_cartao_concluido{
 
     width: auto;
     font-size: 20px;
@@ -180,18 +239,38 @@
     background: none;
 }
 
-.fechar_novo_cartao:hover{
+.fechar_novo_cartao_urgente:hover{
     color: #B13C2E;
 }
 
-.salvar_cartao:hover{
+/*Botao andamento*/
+.salvar_cartao_andamento{
+    background: #C27D0E;
+}
+
+.fechar_novo_cartao_andamento:hover{
+    color: #C27D0E;
+}
+
+/*Botao concluido*/
+.salvar_cartao_concluido{
+    background: #008548;
+}
+
+.fechar_novo_cartao_concluido:hover{
+    color: #008548;
+}
+
+.salvar_cartao_urgente:hover,
+.salvar_cartao_andamento:hover,
+.salvar_cartao_concluido:hover{
     
     animation-name: mexer_botao;
 	animation-duration: .3s;
 	animation-timing-function: ease-out;
 }
 
-#formulario_novo_cartao{
+.formulario_novo_cartao{
     display: none;
 }
 
