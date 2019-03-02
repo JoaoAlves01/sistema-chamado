@@ -559,6 +559,7 @@
     left: 45px;
 }
 
+/*Config do box enviar*/
 .enviar_msg{
     height: 40px;
     margin: 0 auto;
@@ -573,6 +574,7 @@
 }
 
 #comentar{
+    position: static;
     width: 50px;
     height: 50px;
 }
