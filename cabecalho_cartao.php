@@ -1,3 +1,8 @@
+<?php 
+    $listarQtdUrgente = listarQtd('urgente');
+    $listarQtdAndamento = listarQtd('andamento');
+    $listarQtdConcluido = listarQtdConcluido();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,21 +22,21 @@
             <div class="box_trofeu">
                 <i class="fa fa-frown-o" aria-hidden="true"></i>
             </div>
-            <span>Urgente<small><div class="num_urgente" id="num_urgente">38</div></small></span>
+            <span>Urgente<small><div class="num_urgente" id="num_urgente"><?php echo $listarQtdUrgente[0]; ?></div></small></span>
         </div>
 
         <div class="box_pontos">
             <div class="box_trofeu">
                 <i class="fa fa-cogs" aria-hidden="true"></i>
             </div>
-            <span>Em andamento<small>50</small></span>
+            <span>Em andamento<small><?php echo $listarQtdAndamento[0]; ?></small></span>
         </div>
 
         <div class="box_pontos">
             <div class="box_trofeu">
                 <i class="fa fa-smile-o" aria-hidden="true"></i>
             </div>
-            <span>Concluído<small>38</small></span>
+            <span>Concluído<small><?php echo $listarQtdConcluido[0]; ?></small></span>
         </div>
     </div>
                 
