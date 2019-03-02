@@ -548,7 +548,7 @@
 
 .botao_icone_comentario{
     position: absolute;
-    left: 20px;
+    left: 25px;
     top: 80px;
     width: 10px;
     height: 10px;
@@ -556,7 +556,7 @@
 }
 
 .botao_icone_comentario:last-child{
-    left: 40px;
+    left: 45px;
 }
 
 .enviar_msg{
@@ -565,8 +565,8 @@
 }
 
 .img_comentario{
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     position: absolute;
     top: 50px;
     margin-left: 0;
@@ -593,7 +593,7 @@
     font-size: 14px;
     font-weight: 400;
     margin-top: 5px;
-    margin-left: 60px;
+    margin-left: 70px;
     margin-bottom: 10px;
     color: #fff;
     z-index: 99995;
@@ -605,7 +605,7 @@
     top: 45px;
     font-size: 10px;
     font-weight: 300;
-    margin-right: 60px;
+    margin-right: 70px;
     color: #fff;
     z-index: 99997;
 }
@@ -613,7 +613,7 @@
 .comentario_cartao,
 .esquerda_comentario .comentario_cartao{
     position: relative;
-    width: 90%;
+    width: 88%;
     text-align: justify;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -645,15 +645,15 @@
 .esquerda_comentario .nome_usuario_comentario,
 .esquerda_comentario .data_usuario_comentario,
 .esquerda_comentario .comentario_cartao,
-.esquerda_comentario form{
+.esquerda_comentario .botao_icone_comentario{
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
 }
 
-.esquerda_comentario form{
-    margin-left: -20px;
+.esquerda_comentario .botao_icone_comentario{
+    margin-right: -20px;
 }
 
 .esquerda_comentario .comentario_cartao{
