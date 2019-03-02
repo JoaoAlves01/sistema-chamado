@@ -36,13 +36,14 @@
                     <button type="button" class="botao novo_cartao" id="botao_novo_cartao" name="botao_novo_cartao">Adicionar novo cartão</button>
                 </div>
 
-                <form method="POST" action="" class="formulario_novo_cartao" mul>
+                <form method="POST" action="" class="formulario_novo_cartao" enctype="multipart/form-data">
                     <div class="linha_vertical">
                         <button type="button" class="botao fechar fechar_novo_cartao_urgente" id="fechar_novo_cartao_urgente" name="fechar_novo_cartao_urgente"><i class="fa fa-times" aria-hidden="true"></i></button>
                     </div>
 
                     <div class="linha_vertical" id="adicionar_cartao">
                         <input type="text" class="campo_sistema campo_new_cartao" id="nome_cartao_urgente" name="nome_cartao_urgente" placeholder="Informe um título..." />
+                        <input type="file" class="update_arquivo" id="img_cartao_urgente" name="img_cartao_urgente" />
                     </div>
 
                     <div class="linha_vertical">
@@ -91,6 +92,7 @@
 
                     <div class="linha_vertical" id="adicionar_cartao">
                         <input type="text" class="campo_sistema campo_new_cartao" id="nome_cartao_andamento" name="nome_cartao_andamento" placeholder="Informe um título..." />
+                        <input type="file" class="update_arquivo" id="img_cartao_andamento" name="img_cartao_andamento" />
                     </div>
 
                     <div class="linha_vertical">
@@ -139,6 +141,7 @@
 
                     <div class="linha_vertical" id="adicionar_cartao">
                         <input type="text" class="campo_sistema campo_new_cartao" id="nome_cartao_concluido" name="nome_cartao_concluido" placeholder="Informe um título..." />
+                        <input type="file" class="update_arquivo" id="img_cartao_concluido" name="img_cartao_concluido" />
                     </div>
 
                     <div class="linha_vertical">

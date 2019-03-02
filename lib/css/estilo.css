@@ -40,6 +40,35 @@
     transition: .3s;
 }
 
+.update_arquivo
+{
+    position: relative;
+    width: 100%;
+    height: 35px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 #fff, 0 -2px 5px rgba(0,0,0,.08) inset;
+    color: transparent;
+    background: #fff;
+    cursor: pointer;
+    outline: 0;
+}
+
+.update_arquivo:before{
+    position: absolute;
+    content: "Selecione um arquivo";
+    width: 100%;
+    height: 30px;
+    color: #dcdcdc;
+}
+
+.update_arquivo::-webkit-file-upload-button
+{
+    visibility: hidden;
+}
+
 .botao{
     width: 100px;
     height: 28px;
