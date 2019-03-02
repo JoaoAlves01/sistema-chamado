@@ -28,7 +28,7 @@
     </div>
 
     <div class="envelope">
-        <div class="container_info_cartao">
+        <div class="container_info_cartao"> 
             <div class="linha">
                 <div class="img_cartao" id="img_cartao">
                     <img src="img/img_cartao.jpg" alt="img_cartao" />
