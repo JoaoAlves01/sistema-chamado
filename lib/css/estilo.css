@@ -518,19 +518,32 @@
 .container_novo_comentario{
 
     position: relative;
-    border-top: 1px solid #d6d6d6;
     padding: 10px 20px 10px 20px;
-    background: #ECF0F5;
+    background: #fff;
+}
+
+#linha_post{
+    border-bottom: 1px solid #d6d6d6;
+}
+
+/*Configo do titulo*/
+.situacao_pedido{
+    text-align: center;
+    font-size: 26px;
+    line-height: 1.5;
+    color: #234356;
+}
+
+.situacao_pedido small{
+    display: block;
+    font-weight: 300;
+    font-size: 14px;
+    color: #9a9a9a;
 }
 
 .container_novo_comentario{
-    background: #fff;
+    border-top: 1px solid #d6d6d6;
     padding: 20px 20px 10px 20px;
-}
-
-.container_comentario:last-child{
-    border-bottom: 1px solid #d6d6d6;
-    margin-bottom: 40px;
 }
 
 .botao_icone_comentario{
@@ -552,6 +565,8 @@
 }
 
 .img_comentario{
+    position: absolute;
+    top: 50px;
     margin-left: 0;
 }
 
@@ -571,7 +586,8 @@
     font-size: 14px;
     font-weight: bold;
     margin-top: 5px;
-    margin-left: 10px;
+    margin-left: 40px;
+    margin-bottom: 10px;
     color: #234356;
 }
 
@@ -581,13 +597,28 @@
     color: #777;
 }
 
-.comentario_cartao{
-    width: 100%;
+.comentario_cartao,
+.esquerda_comentario .comentario_cartao{
+    position: relative;
+    width: 90%;
     text-align: justify;
     margin: 0 auto;
-    margin-right: 0;
-    margin-left: 40px;
     margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #00A7D0;
+    color: #fff;
+}
+
+.comentario_cartao:before{
+    position: absolute;
+    content: "";
+    top: 20px;
+    left: -3px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+    background: #00A7D0;
 }
 
 .esquerda_comentario{
@@ -609,4 +640,23 @@
 
 .esquerda_comentario form{
     margin-left: -20px;
+}
+
+.esquerda_comentario .comentario_cartao{
+    background: #00A65A;
+}
+
+.esquerda_comentario .comentario_cartao:before{
+    display: none;
+}
+
+.esquerda_comentario .comentario_cartao:after{
+    position: absolute;
+    content: "";
+    top: 20px;
+    right: -3px;
+    width: 10px;
+    height: 10px;
+    transform: rotate(-45deg);
+    background: #00A65A;
 }

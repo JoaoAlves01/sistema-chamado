@@ -9,6 +9,10 @@
                 <span class="nome_usuario_cartao">João Pedro Alves de Sousa<small>7:30 AM Hoje</small></span>
             </div>
 
+            <div class="linha">
+                <span class="situacao_pedido">Status do Pedido<small>Acompanhe aqui o status do seu pedido</small></span>
+            </div>
+
             <div class="img_principal_cartao">
                 <img src="img/img_cartao.jpg" alt="img_principal_cartao" />
             </div> 
@@ -20,7 +24,7 @@
             </div>
 
             <form method="POST" action="">
-                <div class="alinha_botao">
+                <div class="alinha_botao" id="linha_post">
                     <button type="submit" class="botao botao_icone editar_cartao" id="editar_cartao" name="editar_cartao"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</button>
                     <button type="submit" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao"><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
                 </div>
