@@ -58,15 +58,37 @@
 
 .update_arquivo:before{
     position: absolute;
-    content: "Selecione um arquivo";
+    display: flex;
+    align-items: center;
+    left: 9px;
+    content: "Selecione um arquivo...";
     width: 100%;
-    height: 30px;
-    color: #dcdcdc;
+    height: 35px;
+    font-size: 14px;
+    color: #757575;
 }
 
 .update_arquivo::-webkit-file-upload-button
 {
     visibility: hidden;
+}
+
+#conteudo_arquivo{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 9px;
+    width: 50%;
+    height: 35px;
+    color: #757575;
+    background: #fff;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.conter{
+    position: relative;
+    width: 100%;
 }
 
 .botao{
