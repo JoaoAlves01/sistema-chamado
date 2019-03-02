@@ -44,25 +44,27 @@
                 </div>
 
                 <div class="capsula_pedidos urgente_scroll">
-                    <div class="box_solicitacao">
-                        <div class="linha_vertical">
-                            <span class="titulo_cartao">
-                                Titulo Cartão
-                            </span>
+                    <a href="#">
+                        <div class="box_solicitacao">
+                            <div class="linha_vertical">
+                                <span class="titulo_cartao">
+                                    Titulo Cartão
+                                </span>
 
-                            <div class="img_cartao">
-                                <img src="img/img_cartao.jpg" alt="img_cartao" />
+                                <div class="img_cartao">
+                                    <img src="img/img_cartao.jpg" alt="img_cartao" />
+                                </div>
+                            </div>
+                            
+                            <div class="descricao_cartao">
+                                Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
+                            </div>
+
+                            <div class="tempo_cartao">
+                                <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
                             </div>
                         </div>
-                        
-                        <div class="descricao_cartao">
-                            Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
-                        </div>
-
-                        <div class="tempo_cartao">
-                            <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="linha_vertical">
@@ -88,27 +90,29 @@
                 <div class="linha">
                     <span class="titulo_box">Pedidos em andamento</span>
                 </div>
-
+                
                 <div class="capsula_pedidos andamento_scroll">
-                    <div class="box_solicitacao">
-                        <div class="linha_vertical">
-                            <span class="titulo_cartao">
-                                Titulo Cartão
-                            </span>
+                    <a href="#">
+                        <div class="box_solicitacao">
+                            <div class="linha_vertical">
+                                <span class="titulo_cartao">
+                                    Titulo Cartão
+                                </span>
 
-                            <div class="img_cartao">
-                                <img src="img/img_cartao.jpg" alt="img_cartao" />
+                                <div class="img_cartao">
+                                    <img src="img/img_cartao.jpg" alt="img_cartao" />
+                                </div>
+                            </div>
+                            
+                            <div class="descricao_cartao">
+                                Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
+                            </div>
+
+                            <div class="tempo_cartao">
+                                <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
                             </div>
                         </div>
-                        
-                        <div class="descricao_cartao">
-                            Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
-                        </div>
-
-                        <div class="tempo_cartao">
-                            <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="linha_vertical">
@@ -136,25 +140,27 @@
                 </div>
 
                 <div class="capsula_pedidos concluido_scroll">
-                    <div class="box_solicitacao">
-                        <div class="linha_vertical">
-                            <span class="titulo_cartao">
-                                Titulo Cartão
-                            </span>
+                    <a href="#">
+                        <div class="box_solicitacao">
+                            <div class="linha_vertical">
+                                <span class="titulo_cartao">
+                                    Titulo Cartão
+                                </span>
 
-                            <div class="img_cartao">
-                                <img src="img/img_cartao.jpg" alt="img_cartao" />
+                                <div class="img_cartao">
+                                    <img src="img/img_cartao.jpg" alt="img_cartao" />
+                                </div>
+                            </div>
+                            
+                            <div class="descricao_cartao">
+                                Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
+                            </div>
+
+                            <div class="tempo_cartao">
+                                <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
                             </div>
                         </div>
-                        
-                        <div class="descricao_cartao">
-                            Aliqua wiiiii adipisicing ullamco dolor commodo reprehenderit chasy la bodaaa uuuhhh. Minim tempor poulet tikka masala po kass tulaliloo aaaaaah tatata bala tu po kass.
-                        </div>
-
-                        <div class="tempo_cartao">
-                            <i class="fa fa-clock-o" aria-hidden="true"><span>5 horas fev</span></i>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="linha_vertical">

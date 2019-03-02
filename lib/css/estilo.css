@@ -151,6 +151,10 @@
     overflow-x: hidden;
 }
 
+.capsula_pedidos a{
+    text-decoration: none;
+}
+
 /*Scroll urgente*/
 .urgente_scroll::-webkit-scrollbar 
 { 
