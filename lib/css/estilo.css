@@ -89,14 +89,9 @@
 }
 
 .descricao_cartao{
-    
-    /* max-width: 200ch;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
-    
+
     text-align: left;
-    padding-top: 20px;
+    padding-top: 10px;
     color: #000;
 }
 
