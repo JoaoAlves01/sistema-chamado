@@ -469,7 +469,7 @@
     width: 50%;
     height: 300px;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 80px;
     margin-bottom: 20px;
     border: 1px solid #d6d6d6;
 }
@@ -515,6 +515,7 @@
 
 #linha_post{
     border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 30px;
 }
 
 /*Config das caixas de comentario*/
@@ -526,11 +527,13 @@
     background: #fff;
 }
 
-/*Configo do titulo*/
+/*Config do titulo*/
 .situacao_pedido{
     text-align: center;
     font-size: 26px;
     line-height: 1.5;
+    margin-top: 40px;
+    margin-bottom: 30px;
     color: #234356;
 }
 
@@ -541,15 +544,118 @@
     color: #9a9a9a;
 }
 
+/*Config timeline*/
+.status{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    margin-right: 6%;
+    margin-left: 6%;
+    border: 5px solid #DFE3E6;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.status:before{
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: -75px;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 5px;
+    background: #DFE3E6;
+}
+
+.status:after{
+    
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: -75px;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 5px;
+    background: #DFE3E6;
+}
+
+.status:last-child:after,
+.status:first-child:before{
+    display: none;
+}
+
+.status i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #DFE3E6;
+}
+
+/*Config da cor dos circulos*/
+.status_inicio{
+    background: #00C0EF;
+    border: 5px solid #00C0EF;
+}
+
+.status_andamento{
+    background: #F39C12;
+    border: 5px solid #F39C12;
+}
+
+.status_feedback{
+    background: #DD4B39;
+    border: 5px solid #DD4B39;
+}
+
+.status_final{
+    background: #00A65A;
+    border: 5px solid #00A65A;
+}
+
+/*Config da cor dos pernas do status*/
+.status_inicio:before,
+.status_inicio:after{
+    background: #00C0EF;
+}
+
+.status_andamento:before,
+.status_andamento:after{
+    background: #F39C12;
+}
+
+.status_feedback:before,
+.status_feedback:after{
+    background: #DD4B39;
+}
+
+.status_final:before,
+.status_final:after{
+    background: #00A65A;
+}
+
+.titulo_status{
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 15px;
+    line-height: 1.5;
+    color: #234356;
+}
+
 .container_novo_comentario{
     border-top: 1px solid #d6d6d6;
+    margin-top: 30px;
     padding: 20px 20px 10px 20px;
 }
 
 .botao_icone_comentario{
     position: absolute;
     left: 25px;
-    top: 80px;
+    top: 50px;
     width: 10px;
     height: 10px;
     background: none;
@@ -569,7 +675,7 @@
     width: 40px;
     height: 40px;
     position: absolute;
-    top: 50px;
+    top: 20px;
     margin-left: 0;
 }
 
@@ -590,8 +696,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    top: 40px;
+    position: absolute;
+    top: 20px;
     font-size: 14px;
     font-weight: 400;
     margin-top: 5px;
@@ -603,8 +709,9 @@
 
 .data_usuario_comentario{
 
-    position: relative;
-    top: 45px;
+    position: absolute;
+    top: 25px;
+    right: 20px;
     font-size: 10px;
     font-weight: 300;
     margin-right: 70px;
@@ -618,7 +725,6 @@
     width: 88%;
     text-align: justify;
     margin: 0 auto;
-    margin-bottom: 20px;
     padding: 15px;
     padding-top: 40px;
     border-radius: 10px;

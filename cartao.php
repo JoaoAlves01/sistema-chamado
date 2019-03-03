@@ -12,6 +12,28 @@
             <div class="linha">
                 <span class="situacao_pedido">Status do Pedido<small>Acompanhe aqui o status do seu pedido</small></span>
             </div>
+            
+            <div class="linha_vertical">
+                <div class="status status_inicio" id="status_inicio">
+                    <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                    <span class="titulo_status">Início</span>
+                </div>
+
+                <div class="status status_andamento" id="status_andamento">
+                    <i class="fa fa-spinner" aria-hidden="true"></i>
+                    <span class="titulo_status">Andamento</span>
+                </div>
+
+                <div class="status status_feedback" id="status_feedback">
+                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                    <span class="titulo_status">Feedback</span>
+                </div>
+
+                <div class="status status_final" id="status_final">
+                    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                    <span class="titulo_status">Concluído/Cancelado</span>
+                </div>
+            </div>
 
             <div class="img_principal_cartao">
                 <img src="img/img_cartao.jpg" alt="img_principal_cartao" />

@@ -1,4 +1,6 @@
 <?php 
+    include("controller.php");
+    
     $listarQtdUrgente = listarQtd('urgente');
     $listarQtdAndamento = listarQtd('andamento');
     $listarQtdConcluido = listarQtdConcluido();
@@ -29,15 +31,17 @@
             <div class="box_trofeu">
                 <i class="fa fa-cogs" aria-hidden="true"></i>
             </div>
-            <span>Em andamento<small><?php echo $listarQtdAndamento[0]; ?></small></span>
+            <span>Em andamento<small><div class="num_andamento" id="num_andamento"><?php echo $listarQtdAndamento[0]; ?></div></small></span>
         </div>
 
         <div class="box_pontos">
             <div class="box_trofeu">
                 <i class="fa fa-smile-o" aria-hidden="true"></i>
             </div>
-            <span>Concluído<small><?php echo $listarQtdConcluido[0]; ?></small></span>
+            <span>Concluído<small><div class="num_concluido" id="num_concluido"><?php echo $listarQtdConcluido[0]; ?></div></small></span>
         </div>
     </div>
+
+    <script>aumentarPedidos();</script>
                 
     <div class="envelope">
