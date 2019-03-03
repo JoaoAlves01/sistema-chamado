@@ -8,7 +8,7 @@
 
     
 ?>
-        <div class="linha">
+        <div class="linha" id="container_cartao">
 
             <!-- Card do chamado -->
             <div class="box_pedido urgente" id="urgente" data-id="urgente">
