@@ -83,6 +83,7 @@
             </div>
         </div>
         <script>
+            
             $(document).ready(function(){
                 $.ajax({
                     url: "carregarComentarios.php",
