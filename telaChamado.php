@@ -1,11 +1,12 @@
 <?php
-    include("controller.php");
+
+    include("cabecalho_cartao.php");
 
     $chamado_urgentes = listarChamado('urgente');
     $chamado_andamentos = listarChamado('andamento');
     $chamado_concluidos = listarChamadoConcluido();
 
-    include("cabecalho_cartao.php");
+    
 ?>
         <div class="linha">
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 02-Mar-2019 às 21:49
+-- Generation Time: 03-Mar-2019 às 02:05
 -- Versão do servidor: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -373,10 +373,10 @@ CREATE TABLE `sc_chamado` (
 --
 
 INSERT INTO `sc_chamado` (`idChamada`, `idTecnico`, `categoria`, `titulo`, `texto`, `data`, `estatos`) VALUES
-(1, 1, 'urgente', 'Titulo 1', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
-(2, 2, 'andamento', 'Titulo 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
-(3, 1, 'andamento', 'Titulo 3', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
-(4, 2, 'urgente', 'urgente 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0);
+(1, 3, 'urgente', 'Titulo 1', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
+(2, 4, 'andamento', 'Titulo 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
+(3, 3, 'andamento', 'Titulo 3', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
+(4, 4, 'urgente', 'urgente 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0);
 
 -- --------------------------------------------------------
 
@@ -391,6 +391,14 @@ CREATE TABLE `sc_comentario` (
   `texto` varchar(250) NOT NULL,
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `sc_comentario`
+--
+
+INSERT INTO `sc_comentario` (`idComentario`, `idChamada`, `idUsuario`, `texto`, `data`) VALUES
+(0, 1, 4, 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', '2019-03-15'),
+(0, 1, 3, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-16');
 
 -- --------------------------------------------------------
 

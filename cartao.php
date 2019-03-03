@@ -1,5 +1,7 @@
 <?php
     include("controller.php");
+    
+    include("cabecalho_card.php");
 
     if (isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -11,8 +13,6 @@
         //Listar comentarios
         $listarComentarios = listarComentarios($id);
     }
-
-    include("cabecalho_card.php");
 ?>
         <div class="container_info_cartao"> 
             <div class="linha">
