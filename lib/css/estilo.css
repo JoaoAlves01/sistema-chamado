@@ -803,6 +803,7 @@
 .box_perfil{
     position: relative;
     width: 50%;
+    max-width: 670px;
     margin: 0 auto;
     border: 1px solid #bbbbbb;
     border-radius: 5px;
@@ -885,3 +886,5 @@
 .pontuacao:nth-child(3n+0):after{
     display: none;
 }
+
+/*Config da tela do cliente*/
