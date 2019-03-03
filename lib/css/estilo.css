@@ -636,6 +636,13 @@
     background: #00A65A;
 }
 
+.status_inicio i,
+.status_andamento i,
+.status_feedback i,
+.status_final i{
+    color: #fff;
+}
+
 .titulo_status{
     position: absolute;
     top: 80px;
