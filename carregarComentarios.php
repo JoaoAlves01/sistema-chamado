@@ -1,6 +1,3 @@
-<script src="lib/js/jquery.js"></script> 
-<script src="lib/js/controle.js"></script> 
-
 <?php
 include("controller.php");
 
