@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Mar-2019 às 20:58
+-- Generation Time: 04-Mar-2019 às 00:27
 -- Versão do servidor: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -391,20 +391,22 @@ CREATE TABLE `sc_comentario` (
   `idUsuario` int(11) NOT NULL,
   `texto` varchar(250) NOT NULL,
   `data` date NOT NULL,
-  `idUI` varchar(32) NOT NULL
+  `idUI` varchar(32) NOT NULL,
+  `statos` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `sc_comentario`
 --
 
-INSERT INTO `sc_comentario` (`idComentario`, `idChamada`, `idUsuario`, `texto`, `data`, `idUI`) VALUES
-(58, 1, 1, 'fazendo um teste.', '2019-03-03', 'c05fcdde95bdae1beaf2e16b665da0c4'),
-(59, 1, 1, 'oi', '2019-03-03', 'fd68913d36fc2be398fec1f227a07494'),
-(60, 1, 1, 'dsdsdd', '2019-03-03', 'c819f6cfe9a897f862741f4c99d8e14b'),
-(61, 1, 1, 'sdsd', '2019-03-03', '5f54730a3312a35b6bbfa5e36bd633ee'),
-(62, 1, 1, 'sdsdsd', '2019-03-03', 'dfff18cd5a3fbb91fc0fe60f59853fce'),
-(63, 1, 1, 'dsdsdd', '2019-03-03', '4cef371b5e15d08967b4d7d04c517fd3');
+INSERT INTO `sc_comentario` (`idComentario`, `idChamada`, `idUsuario`, `texto`, `data`, `idUI`, `statos`) VALUES
+(72, 1, 3, 'teste para ver se joao destruiu tudo.', '2019-03-04', 'cde6a9c8aab2a3529dc517340d28508d', 0),
+(73, 2, 3, 'teste do usuario! kkkkkkk', '2019-03-04', '720dd843993d51a2aeb9f80c385c057c', 0),
+(74, 2, 4, 'asasas', '2019-03-04', 'dd040c5214c9c7af95b8bf8d15fdf2c9', 0),
+(75, 1, 4, 'asasass', '2019-03-04', '721dd8ff219aa57436ea36699e9b0704', 0),
+(76, 1, 4, 'asasasass', '2019-03-04', '777713f42577a388e920579072e28983', 0),
+(77, 1, 4, 'sasass', '2019-03-04', '2654b797f89dc64fe06f7bea835a1bf3', 0),
+(78, 1, 3, 'ola como vai?', '2019-03-04', '6f9895ba74283daf6733a17951bef2c6', 0);
 
 -- --------------------------------------------------------
 
@@ -613,7 +615,7 @@ ALTER TABLE `sc_chamado`
 -- AUTO_INCREMENT for table `sc_comentario`
 --
 ALTER TABLE `sc_comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
 -- AUTO_INCREMENT for table `turma`
 --
