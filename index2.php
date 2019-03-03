@@ -1,4 +1,5 @@
 <?php 
+	/*
 	include("controller.php");
 
     if (!isset($_SESSION['user'])) {
@@ -6,4 +7,5 @@
     } else {
     	header("Location: telaChamado.php");
     }
+    */
 ?>
