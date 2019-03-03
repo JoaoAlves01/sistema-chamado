@@ -528,6 +528,11 @@
     background: #fff;
 }
 
+.container_comentario .campo_sistema{
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
 /*Config do titulo*/
 .situacao_pedido{
     text-align: center;
@@ -669,8 +674,12 @@
     background: none;
 }
 
-.botao_icone_comentario:last-child{
+.botao_icone_comentario:nth-last-child(-n+2){
     left: 45px;
+}
+
+.cancelar_cartao_comentario{
+    display: none;
 }
 
 /*Config do box enviar*/
@@ -693,54 +702,63 @@
     height: 50px;
 }
 
-.container_novo_comentario .campo_sistema{
+.container_input_comentario{
+    display: none;
+}
+
+.campo_sistema{
     width: 80%;
     margin: 0 auto;
     margin-left: 20px;
+    margin-bottom: 0;
 }
 
-.nome_usuario_comentario{
+.digitar_comentario{
+    width: 95%;
+    margin: 0 auto;
+    margin-left: 20px;
+    border: 1px solid #fff;
+    background: none;
+    color: #fff;
+    box-shadow: none;
+}
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.digitar_comentario::-webkit-input-placeholder {color: #fff;}
+.digitar_comentario::-moz-placeholder {color: #fff;}
+.digitar_comentario:-ms-input-placeholder {color: #fff;}
+
+.nome_usuario_comentario{
     position: absolute;
-    top: 20px;
+    top: 5px;
     font-size: 14px;
     font-weight: 400;
-    margin-top: 5px;
-    margin-left: 70px;
-    margin-bottom: 10px;
+    padding: 0 0 10px 0;
     color: #fff;
-    z-index: 99995;
 }
 
 .data_usuario_comentario{
 
     position: absolute;
-    top: 25px;
+    top: 20px;
     right: 20px;
     font-size: 10px;
     font-weight: 300;
-    margin-right: 70px;
+    margin-right: 10px;
     color: #fff;
     z-index: 99997;
 }
 
-.comentario_cartao,
-.esquerda_comentario .comentario_cartao{
+
+.balao{
     position: relative;
-    width: 88%;
-    text-align: justify;
-    margin: 0 auto;
-    padding: 15px;
+    width: 90%;
     padding-top: 40px;
     border-radius: 10px;
     background: #00A7D0;
-    color: #fff;
 }
 
-.comentario_cartao:before{
+
+.balao:before{
     position: absolute;
     content: "";
     top: 20px;
@@ -749,6 +767,17 @@
     height: 10px;
     transform: rotate(-45deg);
     background: #00A7D0;
+}
+
+.comentario_cartao,
+.esquerda_comentario .comentario_cartao{
+    position: relative;
+    width: 95%;
+    text-align: justify;
+    margin: 0 auto;
+    margin-left: 20px;
+    padding: 5px 0 15px 0;
+    color: #fff;
 }
 
 .esquerda_comentario{
@@ -761,7 +790,8 @@
 .esquerda_comentario .nome_usuario_comentario,
 .esquerda_comentario .data_usuario_comentario,
 .esquerda_comentario .comentario_cartao,
-.esquerda_comentario .botao_icone_comentario{
+.esquerda_comentario .botao_icone_comentario,
+.esquerda_comentario .container_input_comentario{
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
@@ -772,15 +802,11 @@
     margin-right: -20px;
 }
 
-.esquerda_comentario .comentario_cartao{
+.esquerda_comentario .balao{
     background: #00A65A;
 }
 
-.esquerda_comentario .comentario_cartao:before{
-    display: none;
-}
-
-.esquerda_comentario .comentario_cartao:after{
+.esquerda_comentario .balao:before{
     position: absolute;
     content: "";
     top: 20px;
@@ -789,6 +815,10 @@
     height: 10px;
     transform: rotate(-45deg);
     background: #00A65A;
+}
+
+.esquerda_comentario .balao:after{
+    display: none;
 }
 
 /*Config da tela de perfil*/
