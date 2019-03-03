@@ -1,6 +1,10 @@
 <?php
     include("controller.php");
-    
+
+    if (!isset($_SESSION['user'])) {
+        header("Location: login.php?login=n");
+    }
+
     include("cabecalho_card.php");
 
     if (isset($_GET['id'])) {
@@ -54,12 +58,14 @@
                 </span>
             </div>
 
+            <?php if ($chamado[1] == $_SESSION['idUser']) { ?>
             <form method="POST" action="">
                 <div class="alinha_botao" id="linha_post">
                     <button type="submit" class="botao botao_icone editar_cartao" id="editar_cartao" name="editar_cartao"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</button>
                     <button type="submit" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao"><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
                 </div>
             </form>
+            <?php } ?>
 
             <?php while ($resul = $listarComentarios->fetch_array(MYSQLI_NUM)) {
                 
@@ -97,10 +103,10 @@
                         </form>
                         <div class="linha">
                             <div class="img_cartao img_comentario">
-                                <img src="img/img_cartao.jpg" alt="img_cartao" />
+                                <img src="../images/perfil/<?php $usuario = listarUsuario($resul[2]); echo $usuario[5]; ?>" alt="img_cartao" />
                             </div>
-                            <span class="nome_usuario_comentario">João Pedro Alves de Sousa</span>
-                            <span class="data_usuario_comentario">7:30 AM Hoje</span>
+                            <span class="nome_usuario_comentario"><?php echo $usuario[2]; ?></span>
+                            <span class="data_usuario_comentario"><?php echo dataHoraBras($resul[4]);  ?></span>
                             <p class="comentario_cartao">
                                 <?php echo $resul[3];  ?>
                             </p>
@@ -110,12 +116,13 @@
             <?php } } ?>
 
             <div class="container_novo_comentario">
-                <form method="POST" action="">
+                <form method="POST" action="controller.php?f=comentario">
                     <div class="linha_vertical">
                         <div class="img_cartao img_comentario" id="comentar">
-                            <img src="img/img_cartao.jpg" alt="img_cartao" />
+                            <img src="../images/perfil/<?php echo $_SESSION['foto']; ?>" alt="img_cartao" />
                         </div>
-                        <input type="text" class="campo_sistema" id="nome_cartao_urgente" name="nome_cartao_urgente" placeholder="Digite aqui..." />
+                        <input type="hidden" name="idChamada" value="<?php echo $id; ?>">
+                        <input type="text" class="campo_sistema" id="nome_cartao_urgente" name="texto" placeholder="Digite aqui..." />
                         <button type="submit" class="botao botao_icone enviar_msg" id="enviar_msg" name="enviar_msg">Enviar</button>
                     </div>
                 </form>
