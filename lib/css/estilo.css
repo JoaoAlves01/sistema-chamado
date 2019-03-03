@@ -1,6 +1,6 @@
 *{
     margin: 0 auto;
-    padding: 0;
+    padding: 0; 
 }
 
 .envelope{
@@ -888,3 +888,166 @@
 }
 
 /*Config da tela do cliente*/
+.box_visul_pedido{
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*Config box icone*/
+.tipo_pedido{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 7%;
+    margin: 0 auto;
+}
+
+.tipo_pedido i{
+    position: relative;
+    font-size: 45px;
+    color: #234356;
+}
+
+/*Config box titulo do cartao*/
+.titulo_pedido{
+    width: 25%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/*Config da data e status*/
+.data_pedido,
+.status_pedido{
+    width: 10%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+/*Config do responsavel*/
+.tecnico_resp_pedido{
+    width: 20%;
+    margin: 0 auto;
+}
+
+/*Config dos botoes*/
+.botao_pedido{
+    width: 15%;
+    margin: 0 auto;
+}
+
+.botao_cliente_icone{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    font-size: 14px;
+    margin: 0 auto;
+    margin-right: 5%;
+    transition: .3s;
+    color: #234356;
+    background: #EBEEF0;
+}
+
+.botao_cliente_icone:hover{
+    background: #DFE3E6;
+    border: 1px solid #bbbbbb;
+}
+
+/*Config das linhas*/
+.lista_pedido{
+
+    margin-top: 10px;
+    padding: 10px 0;
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+    background: #fff;
+}
+
+#linha_titulo_cliente{
+    font-weight: bold;
+}
+
+.titulos_box_pedido{
+    text-align: left;
+    font-size: 14px;
+    color: #234356;
+}
+
+.fundo_excluir_pedido{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    font-family: Roboto;
+    background: rgba(0, 0, 0, .7);
+    transition: .3s;
+}
+
+.modal_exclur_pedido{
+    display: none;
+    position: relative;
+    top: 60px;
+    width: 480px;
+    margin: 0 auto;
+    padding: 20px 0 10px 0;
+    border-radius: 1px;
+    background: #fff;
+    z-index: 99999;
+
+    animation-name: mover_modal;
+	animation-duration: .3s;
+	animation-timing-function: ease-out;
+}
+
+.titulo_modal,
+.fechar_modal{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0 auto;
+    margin-left: 0;
+    color: #234356;
+}
+
+.fechar_modal{
+    font-size: 14px;
+    margin-top: -20px;
+    margin-right: 0;
+    cursor: pointer;
+    color: #d6d6d6;
+}
+
+.fechar_modal:hover{
+    color: #000;
+}
+
+.linha_modal{
+    padding: 0 20px 5px 20px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.acao_desejada{
+    font-size: 14px;
+    margin: 20px auto;
+    margin-left: 0;
+    color: #234356;
+}
+
+.alinhar_botao_modal{
+    width: 200px;
+    margin: 20px auto;
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.mostrar_modal{
+    display: block;
+}
+
+@keyframes mover_modal{
+
+    0% {top: -233px;}
+    100% {top: -156px;}
+    50% {top: -79px;}
+	100% {top: 60px;}
+}
