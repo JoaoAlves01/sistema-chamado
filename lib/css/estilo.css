@@ -232,18 +232,13 @@
 .box_solicitacao{
     width: 93.5%;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-bottom: 15px;
     padding: 10px 10px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     background: #fff;
     cursor: pointer;
     transition: .3s;
-}
-
-.box_solicitacao:first-child{
-
-    margin-top: 0;
 }
 
 .box_solicitacao:hover{
@@ -482,7 +477,7 @@
 
 .titulo_descricao_cartao{
 
-    padding: 0 5%;
+    padding: 80px 5% 10px 5%;
     margin-bottom: 10px;
 }
 
