@@ -23,7 +23,7 @@
                 <div class="img_cartao" id="img_cartao">
                     <img src="../images/perfil/<?php echo $usuarioChamado[5]; ?>" alt="img_cartao" />
                 </div>
-                <span class="nome_usuario_cartao"><?php echo $usuarioChamado[2]; ?><small><?php echo dataHoraBras($chamado[5]); ?></small></span>
+                <span class="nome_usuario_cartao"><a href="perfil.php"><?php echo $usuarioChamado[2]; ?></a><small><?php echo dataHoraBras($chamado[5]); ?></small></span>
             </div>
 
             <div class="linha">

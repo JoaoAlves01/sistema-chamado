@@ -442,14 +442,20 @@
 }
 
 .nome_usuario_cartao,
+.nome_usuario_cartao a,
 .nome_usuario_comentario{
 
     text-align: left;
+    text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     margin-left: 20px;
     margin-top: 10px;
     color: #72AFD2;
+}
+
+.nome_usuario_cartao a{
+    margin-left: 0;
 }
 
 .nome_usuario_cartao small{
@@ -459,6 +465,7 @@
     line-height: 1.5;
     color: #bbbbbb;
 }
+
 
 .img_principal_cartao{
     width: 50%;
@@ -783,4 +790,98 @@
     height: 10px;
     transform: rotate(-45deg);
     background: #00A65A;
+}
+
+/*Config da tela de perfil*/
+#container_perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.box_perfil{
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    box-shadow: 0 0 30px 12px rgba(0, 0, 0, .1);
+    background: #fff;
+    overflow: hidden;
+}
+
+.box_titulo_perfil{
+    height: 80px;
+    padding: 20px;
+    background: #00A7D0;
+}
+
+.titulo_perfil{
+    font-size: 25px;
+    text-align: left;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.titulo_perfil small{
+    display: block; 
+    font-size: 14px;
+}
+
+.box_pontuacao{
+    min-height: 80px;
+    padding-top: 50px;
+    background: #fff;
+}
+
+.img_perfil{
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    overflow: hidden;
+    background: #fff;
+}
+
+.img_perfil img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pontuacao{
+    position: relative;
+    width: 33%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #234356;
+}
+
+.pontuacao small{
+    display: block;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.pontuacao:after{
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    width: 1px;
+    height: 70px;
+    background: #d6d6d6;
+}
+
+.pontuacao:nth-child(3n+0):after{
+    display: none;
 }
