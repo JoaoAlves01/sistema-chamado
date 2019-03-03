@@ -12,37 +12,6 @@
     $chamado_andamentos = listarChamado('andamento');
     $chamado_concluidos = listarChamadoConcluido();    
 ?>
-<!DOCTYPE html>
-<html>
-<meta charset="utf-8">
-    <title>Visualizar Pedidos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
-    <script src="lib/js/jquery.js"></script> 
-    <script src="lib/js/controle.js"></script> 
-<body>
-    <div class="fundo_excluir_pedido">
-        <div class="modal_exclur_pedido">
-            <div class="linha_vertical linha_modal">
-                <span class="titulo_modal">Cancelar Pedido</span>
-                <span class="fechar_modal"><i class="fa fa-close" aria-hidden="true"></i></span>
-            </div>
-            <div class="linha linha_modal">
-                <label class="acao_desejada">Deseja realmente cancelar seu pedido!</label>
-            </div>
-            <form method="POST" action="">
-                <div class="alinhar_botao_modal">
-                    <button type="submit" class="botao botao_icone" id="cancelar_pedido" name="cancelar_pedido">Sim</button>
-                    <button type="button" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Não</button>
-                </div>
-            </form>
-        </div>       
-    </div>
-    
-    <div class="envelope">
         <div class="box_visul_pedido">
             <div class="linha_vertical" id="linha_titulo_cliente">
                 <div class="tipo_pedido"></div>
@@ -129,7 +98,7 @@
                         <div class="alinhar_botao">
                             <button type="submit" class="botao botao_cliente_icone" id="visualizar_pedido" name="visualizar_pedido"><i class="fa fa-eye" aria-hidden="true"></i></button>
                             <button type="submit" class="botao botao_cliente_icone" id="editar_pedido" name="editar_pedido"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                            <button type="submit" class="botao botao_cliente_icone" id="excluir_pedido" name="excluir_pedido"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            <button type="button" class="botao botao_cliente_icone excluir_modal" id="excluir_pedido" name="excluir_pedido"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                         </div>
                     </form>
                 </div>
@@ -161,7 +130,7 @@
                         <div class="alinhar_botao">
                             <button type="submit" class="botao botao_cliente_icone" id="visualizar_pedido" name="visualizar_pedido"><i class="fa fa-eye" aria-hidden="true"></i></button>
                             <button type="submit" class="botao botao_cliente_icone" id="editar_pedido" name="editar_pedido"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                            <button type="submit" class="botao botao_cliente_icone" id="excluir_pedido" name="excluir_pedido"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            <button type="button" class="botao botao_cliente_icone excluir_modal" id="excluir_pedido" name="excluir_pedido"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                         </div>
                     </form>
                 </div>

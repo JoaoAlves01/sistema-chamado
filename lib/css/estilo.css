@@ -40,6 +40,15 @@
     transition: .3s;
 }
 
+.label_sistema{
+    font-size: 14px;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-left: 0;
+    color: #234356;
+}
+
 .update_arquivo
 {
     position: relative;
@@ -131,6 +140,10 @@
     color: #fff;
 }
 
+.abrir_chamado{
+    cursor: pointer;
+}
+
 #trofeu:after{
     position: absolute;
     top: 40px;
@@ -139,6 +152,17 @@
     font-size: 10px;
     color: #009ABF;
 
+}
+
+/*Config do modal de novo pedido*/
+#modal_nv_pedido .campo_sistema{
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 0;
+}
+
+#modal_nv_pedido .campo_sistema:last-child{
+    margin-bottom: 10px;
 }
 
 /*Cores dos quadros*/
@@ -1013,6 +1037,7 @@
     z-index: 99999;
 }
 
+.modal_novo_pedido,
 .modal_exclur_pedido{
     display: none;
     position: relative;
