@@ -27,7 +27,7 @@
 	/*			USUARIO CRUD 		*/
 
 	/*			LOGAR				*/
-	function login(){
+	function loginT(){
 		//cria a conexao com o banco
 		$conexao = model_conexao();
 
@@ -52,9 +52,46 @@
 				$_SESSION['foto'] = $resul[5];
 				$_SESSION['contraste'] = false;
 				$_SESSION['data'] = date("Y-m-d");
+				$_SESSION['tipoUsuario'] = 'tecnico';
 
 				//redirecionamento
 				header("Location: telaChamado.php");		
+			} else {
+				//login nao encontrado
+				header("Location: login.php?login=n");
+			}
+		}
+	}
+
+	function loginU(){
+		//cria a conexao com o banco
+		$conexao = model_conexao();
+
+		//extrai todos os dados
+		extract($_POST);
+
+		//verifica se os campos nao estao em branco
+		if ($login != '') {
+			//SQL comando para logar
+			$sql = "SELECT * FROM aluno WHERE matricula = '".$login."'";
+
+			$resultado = $conexao->query($sql);
+
+			//Verifica se a execução retonou alguma informação
+			if ($resultado->num_rows) {
+				//se deu certo o login executa os passos a seguir
+				$resul = $resultado->fetch_array(MYSQLI_NUM);
+
+				//Sessoes
+				$_SESSION['idUser'] = $resul[0];
+				$_SESSION['user'] = $resul[2];
+				$_SESSION['foto'] = $resul[5];
+				$_SESSION['contraste'] = false;
+				$_SESSION['data'] = date("Y-m-d");
+				$_SESSION['tipoUsuario'] = 'usuario';
+
+				//redirecionamento
+				header("Location: telaCliente.php");		
 			} else {
 				//login nao encontrado
 				header("Location: login.php?login=n");
@@ -66,17 +103,25 @@
 		//Conexao
 		$conexao = model_conexao();
 
-		extract($_POST);			
+		extract($_POST);
+
+		//Cria o sistema unico de idUI
+		$idUI = md5(microtime()) . '.' . $_SESSION['idUser'];			
 
 		//Sql instrucao
-		$sql = "INSERT INTO sc_comentario (idChamada, idUsuario, texto, data) VALUES ('".$idChamada."', '".$_SESSION['idUser']."', '".$texto."', '".$_SESSION['data']."')";
+		$sql = "INSERT INTO sc_comentario (idChamada, idUsuario, texto, data, idUI) VALUES ('".$idChamada."', '".$_SESSION['idUser']."', '".$texto."', '".$_SESSION['data']."', '".$idUI."')";
 
 		//executa a query
 		$resultado = $conexao->query($sql);
 
+		$vetor[] = array('id'=>1);
+		echo json_encode($vetor);
+
+		/*
 		if ($resultado) {
 			header('Location: cartao.php?id='.$idChamada);
 		}
+		*/
 	}
 
 	//deslogar
