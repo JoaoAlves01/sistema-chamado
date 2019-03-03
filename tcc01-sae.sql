@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Mar-2019 às 04:31
+-- Generation Time: 03-Mar-2019 às 20:58
 -- Versão do servidor: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -365,18 +365,19 @@ CREATE TABLE `sc_chamado` (
   `titulo` varchar(50) NOT NULL,
   `texto` text NOT NULL,
   `data` date NOT NULL,
-  `estatos` int(1) NOT NULL
+  `estatos` int(1) NOT NULL,
+  `idUI` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `sc_chamado`
 --
 
-INSERT INTO `sc_chamado` (`idChamada`, `idTecnico`, `categoria`, `titulo`, `texto`, `data`, `estatos`) VALUES
-(1, 3, 'urgente', 'Titulo 1', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
-(2, 4, 'andamento', 'Titulo 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
-(3, 3, 'andamento', 'Titulo 3', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0),
-(4, 4, 'urgente', 'urgente 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0);
+INSERT INTO `sc_chamado` (`idChamada`, `idTecnico`, `categoria`, `titulo`, `texto`, `data`, `estatos`, `idUI`) VALUES
+(1, 3, 'urgente', 'Titulo 1', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0, '0'),
+(2, 4, 'andamento', 'Titulo 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0, '0'),
+(3, 3, 'andamento', 'Titulo 3', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0, '0'),
+(4, 4, 'urgente', 'urgente 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0, '0');
 
 -- --------------------------------------------------------
 
@@ -389,22 +390,21 @@ CREATE TABLE `sc_comentario` (
   `idChamada` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `texto` varchar(250) NOT NULL,
-  `data` date NOT NULL
+  `data` date NOT NULL,
+  `idUI` varchar(32) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `sc_comentario`
 --
 
-INSERT INTO `sc_comentario` (`idComentario`, `idChamada`, `idUsuario`, `texto`, `data`) VALUES
-(16, 3, 4, 'teste do usuario! kkkkkkk', '2019-03-03'),
-(17, 4, 3, 'teste', '2019-03-03'),
-(18, 1, 3, 'teste', '2019-03-03'),
-(19, 4, 3, 'sasass', '2019-03-03'),
-(20, 1, 4, 'dssd', '2019-03-03'),
-(21, 1, 4, 'é joao ta brabo!', '2019-03-03'),
-(22, 4, 3, 'asdsds', '2019-03-03'),
-(23, 2, 3, 'sdsdsd', '2019-03-03');
+INSERT INTO `sc_comentario` (`idComentario`, `idChamada`, `idUsuario`, `texto`, `data`, `idUI`) VALUES
+(58, 1, 1, 'fazendo um teste.', '2019-03-03', 'c05fcdde95bdae1beaf2e16b665da0c4'),
+(59, 1, 1, 'oi', '2019-03-03', 'fd68913d36fc2be398fec1f227a07494'),
+(60, 1, 1, 'dsdsdd', '2019-03-03', 'c819f6cfe9a897f862741f4c99d8e14b'),
+(61, 1, 1, 'sdsd', '2019-03-03', '5f54730a3312a35b6bbfa5e36bd633ee'),
+(62, 1, 1, 'sdsdsd', '2019-03-03', 'dfff18cd5a3fbb91fc0fe60f59853fce'),
+(63, 1, 1, 'dsdsdd', '2019-03-03', '4cef371b5e15d08967b4d7d04c517fd3');
 
 -- --------------------------------------------------------
 
@@ -613,7 +613,7 @@ ALTER TABLE `sc_chamado`
 -- AUTO_INCREMENT for table `sc_comentario`
 --
 ALTER TABLE `sc_comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT for table `turma`
 --
