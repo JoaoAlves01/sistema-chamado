@@ -1,25 +1,3 @@
-<?php 
-    include("controller.php");
-    
-    $listarQtdUrgente = listarQtd('urgente');
-    $listarQtdAndamento = listarQtd('andamento');
-    $listarQtdConcluido = listarQtdConcluido();
- ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Sistema de Chamadas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
-    <script src="lib/js/jquery.js"></script>
-    <script src="lib/js/controle.js"></script> 
-</head>
-<body>
-
     <div class="fundo_excluir_pedido">
         <div class="modal_exclur_pedido">
             <div class="linha_vertical linha_modal">

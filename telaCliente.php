@@ -1,17 +1,36 @@
 <?php
-
-    include("cabecalho_cartao.php");
+    //include("cabecalho_cartao.php");
+    include("controller.php");
 
     if (isset($_SESSION['tipoUsuario'])) {
         if ($_SESSION['tipoUsuario'] == 'tecnico') {
            header("Location: telaChamado.php");
         }        
-    }
+    }  
+
+    $listarQtdUrgente = listarQtd('urgente');
+    $listarQtdAndamento = listarQtd('andamento');
+    $listarQtdConcluido = listarQtdConcluido();
 
     $chamado_urgentes = listarChamado('urgente');
     $chamado_andamentos = listarChamado('andamento');
     $chamado_concluidos = listarChamadoConcluido();    
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de Chamadas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/controle.js"></script> 
+</head>
+<body>
+    <?php include 'cabecalho_cartao.php'; ?>
         <div class="box_visul_pedido">
             <div class="linha_vertical" id="linha_titulo_cliente">
                 <div class="tipo_pedido"></div>

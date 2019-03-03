@@ -125,12 +125,12 @@
 		extract($_POST);		
 
 		//Sql instrucao
-		$sql = "UPDATE sc_comentario SET estatos = 1 WHERE idUI = '".$cancelar_pedido."'";
+		$sql = "UPDATE sc_comentario SET statos = '1' WHERE idUI ='".$cancelar_pedido."'";
 
 		//executa a query
 		$resultado = $conexao->query($sql);
 
-		//header("Location: login.php");
+		header("Location: cartao.php?id=".$_SESSION['id']);
 
 	}
 
@@ -144,7 +144,7 @@
 
 		$conexao = model_conexao();
 
-		$sql = "SELECT * FROM sc_comentario WHERE idChamada = '".$id."'";
+		$sql = "SELECT * FROM sc_comentario WHERE idChamada = '".$id."' AND statos = 0";
 
 		$resultado = $conexao->query($sql);
 
