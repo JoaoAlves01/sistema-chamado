@@ -116,12 +116,22 @@
 
 		$vetor[] = array('id'=>1);
 		echo json_encode($vetor);
+	}
 
-		/*
-		if ($resultado) {
-			header('Location: cartao.php?id='.$idChamada);
-		}
-		*/
+	function excluirComentario(){
+		//Conexao
+		$conexao = model_conexao();
+
+		extract($_POST);		
+
+		//Sql instrucao
+		$sql = "UPDATE sc_comentario SET estatos = 1 WHERE idUI = '".$cancelar_pedido."'";
+
+		//executa a query
+		$resultado = $conexao->query($sql);
+
+		//header("Location: login.php");
+
 	}
 
 	//deslogar

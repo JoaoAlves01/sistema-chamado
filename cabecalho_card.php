@@ -21,7 +21,7 @@
             <div class="linha linha_modal">
                 <label class="acao_desejada">Deseja realmente excluir!</label>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="controller.php?f=excluirComentario">
                 <div class="alinhar_botao_modal">
                     <button type="submit" class="botao botao_icone" id="cancelar_pedido" name="cancelar_pedido">Sim</button>
                     <button type="button" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Não</button>
