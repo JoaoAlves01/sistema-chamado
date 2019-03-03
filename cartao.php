@@ -62,7 +62,7 @@
             <form method="POST" action="">
                 <div class="alinha_botao" id="linha_post">
                     <button type="submit" class="botao botao_icone editar_cartao" id="editar_cartao" name="editar_cartao"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</button>
-                    <button type="submit" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao"><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
+                    <button type="button" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao" value=""><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
                 </div>
             </form>
             <?php } ?>

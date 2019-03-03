@@ -144,7 +144,6 @@
 /*Cores dos quadros*/
 .urgente{
     background: #dd4b39;
-    box-shadow: 0 0 20px 3px rgba(34, 45, 50, .2);
 }
 
 .andamento{
@@ -981,6 +980,7 @@
     font-family: Roboto;
     background: rgba(0, 0, 0, .7);
     transition: .3s;
+    z-index: 99999;
 }
 
 .modal_exclur_pedido{

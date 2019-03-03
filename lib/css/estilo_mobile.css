@@ -10,10 +10,13 @@
     
     /*Config da pagina de chamado*/
     #container_cartao{
+        flex-wrap: nowrap;
         overflow-x: scroll;
         overflow-y: hidden;
-        height: 200px;
-        white-space: nowrap;
+    }
+
+    .box_pedido{
+        width: 300px;
     }
 }
 

@@ -22,7 +22,7 @@
             <form method="POST" action="">
                 <div class="alinhar_botao_modal">
                     <button type="submit" class="botao botao_icone" id="cancelar_pedido" name="cancelar_pedido">Sim</button>
-                    <button type="submit" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Não</button>
+                    <button type="button" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Não</button>
                 </div>
             </form>
         </div>       
