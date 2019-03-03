@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 03-Mar-2019 às 02:05
+-- Generation Time: 03-Mar-2019 às 04:31
 -- Versão do servidor: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -44,10 +44,10 @@ CREATE TABLE `aluno` (
 --
 
 INSERT INTO `aluno` (`idAluno`, `matricula`, `nome`, `dataNascimento`, `idTurma`, `foto`, `ativo`, `apelido`) VALUES
-(3, 0, 'Alberto Junior da S Rosa', '0000-00-00', 1, '09.jpeg', 1, ''),
-(4, 0, 'Aline Flôr de Oliveira', '0000-00-00', 1, '10.jpeg', 1, ''),
-(5, 0, 'Brenda rodrigues dos Santos', '0000-00-00', 1, '04.jpeg', 1, ''),
-(6, 0, 'Flávia da Silva Nascimento', '0000-00-00', 1, '11.jpeg', 1, ''),
+(3, 1010, 'Alberto Junior da S Rosa', '0000-00-00', 1, '09.jpeg', 1, ''),
+(4, 1111, 'Aline Flôr de Oliveira', '0000-00-00', 1, '10.jpeg', 1, ''),
+(5, 2020, 'Brenda rodrigues dos Santos', '0000-00-00', 1, '04.jpeg', 1, ''),
+(6, 2121, 'Flávia da Silva Nascimento', '0000-00-00', 1, '11.jpeg', 1, ''),
 (7, 0, 'Guilherme Pereira C da Silva', '0000-00-00', 1, '08.jpeg', 1, ''),
 (8, 0, 'Guilherme Ramalho G Teixeira', '0000-00-00', 1, '12.jpeg', 1, ''),
 (9, 0, 'Helio Machado Fonseca', '0000-00-00', 1, '13.jpeg', 1, ''),
@@ -397,8 +397,14 @@ CREATE TABLE `sc_comentario` (
 --
 
 INSERT INTO `sc_comentario` (`idComentario`, `idChamada`, `idUsuario`, `texto`, `data`) VALUES
-(0, 1, 4, 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', '2019-03-15'),
-(0, 1, 3, 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-16');
+(16, 3, 4, 'teste do usuario! kkkkkkk', '2019-03-03'),
+(17, 4, 3, 'teste', '2019-03-03'),
+(18, 1, 3, 'teste', '2019-03-03'),
+(19, 4, 3, 'sasass', '2019-03-03'),
+(20, 1, 4, 'dssd', '2019-03-03'),
+(21, 1, 4, 'é joao ta brabo!', '2019-03-03'),
+(22, 4, 3, 'asdsds', '2019-03-03'),
+(23, 2, 3, 'sdsdsd', '2019-03-03');
 
 -- --------------------------------------------------------
 
@@ -522,6 +528,12 @@ ALTER TABLE `sc_chamado`
   ADD PRIMARY KEY (`idChamada`);
 
 --
+-- Indexes for table `sc_comentario`
+--
+ALTER TABLE `sc_comentario`
+  ADD PRIMARY KEY (`idComentario`);
+
+--
 -- Indexes for table `turma`
 --
 ALTER TABLE `turma`
@@ -597,6 +609,11 @@ ALTER TABLE `professor`
 --
 ALTER TABLE `sc_chamado`
   MODIFY `idChamada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `sc_comentario`
+--
+ALTER TABLE `sc_comentario`
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `turma`
 --

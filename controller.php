@@ -35,10 +35,9 @@
 		extract($_POST);
 
 		//verifica se os campos nao estao em branco
-		if ($login != '' AND $senha != '') {
-			$senha = md5($senha);
+		if ($login != '') {
 			//SQL comando para logar
-			$sql = "SELECT * FROM usuario WHERE login = '".$login."'  AND senha = '".$senha."'";
+			$sql = "SELECT * FROM aluno WHERE matricula = '".$login."'";
 
 			$resultado = $conexao->query($sql);
 
@@ -49,17 +48,34 @@
 
 				//Sessoes
 				$_SESSION['idUser'] = $resul[0];
-				$_SESSION['user'] = $resul[1];
-				$_SESSION['foto'] = $resul[4];
+				$_SESSION['user'] = $resul[2];
+				$_SESSION['foto'] = $resul[5];
 				$_SESSION['contraste'] = false;
 				$_SESSION['data'] = date("Y-m-d");
 
 				//redirecionamento
-				header("Location: index.php");		
+				header("Location: telaChamado.php");		
 			} else {
 				//login nao encontrado
 				header("Location: login.php?login=n");
 			}
+		}
+	}
+
+	function comentario(){
+		//Conexao
+		$conexao = model_conexao();
+
+		extract($_POST);			
+
+		//Sql instrucao
+		$sql = "INSERT INTO sc_comentario (idChamada, idUsuario, texto, data) VALUES ('".$idChamada."', '".$_SESSION['idUser']."', '".$texto."', '".$_SESSION['data']."')";
+
+		//executa a query
+		$resultado = $conexao->query($sql);
+
+		if ($resultado) {
+			header('Location: cartao.php?id='.$idChamada);
 		}
 	}
 
