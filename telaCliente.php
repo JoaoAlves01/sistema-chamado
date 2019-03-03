@@ -1,3 +1,17 @@
+<?php
+
+    include("cabecalho_cartao.php");
+
+    if (isset($_SESSION['tipoUsuario'])) {
+        if ($_SESSION['tipoUsuario'] == 'tecnico') {
+           header("Location: telaChamado.php");
+        }        
+    }
+
+    $chamado_urgentes = listarChamado('urgente');
+    $chamado_andamentos = listarChamado('andamento');
+    $chamado_concluidos = listarChamadoConcluido();    
+?>
 <!DOCTYPE html>
 <html>
 <meta charset="utf-8">

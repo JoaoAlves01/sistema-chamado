@@ -29,11 +29,11 @@
 
       <div class="login_wrapper">
         <div class="animate form login_form">
-          <div><h1>School SAE | ERP</h1></div>
+          <div><h1>Simulador de chamados</h1></div>
           <section class="login_content">
-            <form method="POST" action="controller.php?f=login">
+            <form method="POST" action="controller.php?f=loginT">
 
-              <h1>Administração</h1>
+              <h1>Login Técnico</h1>
               <div>
                 <?php
                 //verifica se o login esta errado, recebendo via get a informação da url.
@@ -51,14 +51,27 @@
                 <input type="submit" name="enviar" class="btn btn-default submit" value="Entrar">
                 <a class="reset_pass" href="#">Esqueceu sua senha?</a>
               </div>
+            </form>
 
-              <div class="clearfix"></div>
-              <div class="separator">
-                <div class="clearfix"></div>
-                <br />
-                <div>
-                  <p>©2019 Todos os direitos reservados.</p>
+             <form method="POST" action="controller.php?f=loginU">
+
+              <h1>Login usúario</h1>
+              <div>
+                <?php
+                //verifica se o login esta errado, recebendo via get a informação da url.
+                if (isset($_GET['login'])) {                
+              ?> 
+                <div class="alert alert-danger" role="alert">
+                  <strong>ERROR:</strong> Login ou senha inválidos!
                 </div>
+              <?php
+                }
+              ?>
+                <input type="text" name="login" class="form-control" placeholder="matricula" required="" />
+              </div>
+              <div>
+                <input type="submit" name="enviar" class="btn btn-default submit" value="Entrar">
+                <a class="reset_pass" href="#">Esqueceu sua senha?</a>
               </div>
             </form>
           </section>

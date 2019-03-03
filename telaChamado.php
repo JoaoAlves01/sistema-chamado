@@ -2,6 +2,12 @@
 
     include("cabecalho_cartao.php");
 
+    if (isset($_SESSION['tipoUsuario'])) {
+        if ($_SESSION['tipoUsuario'] == 'usuario') {
+           header("Location: telaCliente.php");
+        }        
+    }
+
     $chamado_urgentes = listarChamado('urgente');
     $chamado_andamentos = listarChamado('andamento');
     $chamado_concluidos = listarChamadoConcluido();
