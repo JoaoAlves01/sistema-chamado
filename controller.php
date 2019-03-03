@@ -69,6 +69,30 @@
 		header("Location: login.php");
 	}
 
+	function listarComentarios($id){
+
+		$conexao = model_conexao();
+
+		$sql = "SELECT * FROM sc_comentario WHERE idChamada = '".$id."'";
+
+		$resultado = $conexao->query($sql);
+
+		return $resultado;
+	}
+
+	function listarUsuario($id){
+
+		$conexao = model_conexao();
+
+		$sql = "SELECT * FROM aluno WHERE idAluno = '".$id."'";
+
+		$resultado = $conexao->query($sql);
+
+		$resul = $resultado->fetch_array(MYSQLI_NUM);
+
+		return $resul;
+	}
+
 
 	function listarChamado($categoria){
 
@@ -79,6 +103,19 @@
 		$resultado = $conexao->query($sql);
 
 		return $resultado;
+	}
+
+	function listarChamadoId($idChamada){
+
+		$conexao = model_conexao();
+
+		$sql = "SELECT * FROM sc_chamado WHERE idChamada = '".$idChamada."'";
+
+		$resultado = $conexao->query($sql);
+
+		$resul = $resultado->fetch_array(MYSQLI_NUM);
+
+		return $resul;
 	}
 
 	function listarChamadoConcluido(){
@@ -112,56 +149,6 @@
 		$resul = $resultado->fetch_array(MYSQLI_NUM);
 
 		return $resul;
-	}
-
-	function listarUcTurma(){
-		$conexao = model_conexao();
-
-		$sql = "SELECT count(id) FROM auxdisciplinaturma WHERE idCurso = '".$_SESSION['idCurso']."' AND idTurma = '".$_SESSION['idTurma']."'";
-
-		$resultado = $conexao->query($sql);
-		$resul = $resultado->fetch_array(MYSQLI_NUM);
-
-		return $resul;
-	}
-
-	function listarUcMaxima(){
-		$conexao = model_conexao();
-
-		$sql = "SELECT count(idDisciplina) FROM disciplina WHERE idCurso = '".$_SESSION['idCurso']."'";
-
-		$resultado = $conexao->query($sql);
-		$resul = $resultado->fetch_array(MYSQLI_NUM);
-
-		return $resul;
-	}
-
-	function inserirUcTurma(){
-		$conexao = model_conexao();
-
-		extract($_POST);
-
-		//verifica se já existe essa falta.
-		$sql = "SELECT * FROM auxdisciplinaturma WHERE idCurso = '".$_SESSION['idCurso']."' AND idTurma = '".$_SESSION['idTurma']."' AND idDisciplina = '".$id."'";
-		$presenca = $conexao->query($sql);
-
-		//verifica se já existe uma turma com aquele numero.
-		if (!$presenca->num_rows) {
-			$sql = "INSERT INTO auxdisciplinaturma (idCurso, idTurma, idDisciplina) VALUES('".$_SESSION['idCurso']."', '".$_SESSION['idTurma']."', '".$id."')";
-
-			$resultado = $conexao->query($sql);
-
-			//refazer uma consulta no banco pelo id
-			$sql = "SELECT count(id) FROM auxdisciplinaturma WHERE idDisciplina = '".$id."' AND idCurso = '".$_SESSION['idCurso']."' AND idTurma = '".$_SESSION['idTurma']."'";
-
-			//Executa o model
-			$resultadoJson = $conexao->query($sql);
-			$resul = $resultadoJson->fetch_array(MYSQLI_NUM);
-
-			//retornar em modo json para o ajax
-			$vetor[] = array('id'=>$resul[0][0]);
-			echo json_encode($vetor);
-		}
 	}
 
 	//pegar data e hora do servidor
