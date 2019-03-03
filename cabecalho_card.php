@@ -15,11 +15,11 @@
     <div class="fundo_excluir_pedido">
         <div class="modal_exclur_pedido">
             <div class="linha_vertical linha_modal">
-                <span class="titulo_modal">Excluir Pedido</span>
+                <span class="titulo_modal">Excluir</span>
                 <span class="fechar_modal"><i class="fa fa-close" aria-hidden="true"></i></span>
             </div>
             <div class="linha linha_modal">
-                <label class="acao_desejada">Deseja realmente excluir seu pedido!</label>
+                <label class="acao_desejada">Deseja realmente excluir!</label>
             </div>
             <form method="POST" action="">
                 <div class="alinhar_botao_modal">

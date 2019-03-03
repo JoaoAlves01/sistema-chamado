@@ -75,7 +75,7 @@
                     <div class="container_comentario">
                         <form method="POST" action="">
                             <div class="alinha_botao">
-                                <button type="submit" class="botao botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                <button type="button" class="botao deletar_cartao_comentario botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario" value=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 <button type="submit" class="botao botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                             </div>
                         </form>
@@ -97,7 +97,7 @@
                     <div class="container_comentario esquerda_comentario">
                         <form method="POST" action="">
                             <div class="alinha_botao">
-                                <button type="submit" class="botao botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                <button type="button" class="botao deletar_cartao_comentario botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario" value=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 <button type="submit" class="botao botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
                             </div>
                         </form>
