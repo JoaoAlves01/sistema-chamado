@@ -442,14 +442,20 @@
 }
 
 .nome_usuario_cartao,
+.nome_usuario_cartao a,
 .nome_usuario_comentario{
 
     text-align: left;
+    text-decoration: none;
     font-size: 16px;
     font-weight: bold;
     margin-left: 20px;
     margin-top: 10px;
     color: #72AFD2;
+}
+
+.nome_usuario_cartao a{
+    margin-left: 0;
 }
 
 .nome_usuario_cartao small{
@@ -459,6 +465,7 @@
     line-height: 1.5;
     color: #bbbbbb;
 }
+
 
 .img_principal_cartao{
     width: 50%;
