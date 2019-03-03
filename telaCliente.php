@@ -33,10 +33,12 @@
             <div class="linha linha_modal">
                 <label class="acao_desejada">Deseja realmente cancelar seu pedido!</label>
             </div>
-            <div class="alinhar_botao_modal">
-                <button type="submit" class="botao botao_icone" id="cancelar_pedido" name="cancelar_pedido">Sim</button>
-                <button type="submit" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Não</button>
-            </div>
+            <form method="POST" action="">
+                <div class="alinhar_botao_modal">
+                    <button type="submit" class="botao botao_icone" id="cancelar_pedido" name="cancelar_pedido">Sim</button>
+                    <button type="button" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Não</button>
+                </div>
+            </form>
         </div>       
     </div>
     

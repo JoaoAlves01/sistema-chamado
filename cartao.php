@@ -62,14 +62,64 @@
             <form method="POST" action="">
                 <div class="alinha_botao" id="linha_post">
                     <button type="submit" class="botao botao_icone editar_cartao" id="editar_cartao" name="editar_cartao"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</button>
-                    <button type="submit" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao"><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
+                    <button type="button" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao" value=""><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
                 </div>
             </form>
             <?php } ?>
 
+<<<<<<< HEAD
             <div id="caixaComentarios">
 
             </div>
+=======
+            <?php while ($resul = $listarComentarios->fetch_array(MYSQLI_NUM)) {
+                
+                if($resul[2] == $chamado[1]){ ?>
+
+                    <!-- Container direito -->
+                    <div class="container_comentario">
+                        <form method="POST" action="">
+                            <div class="alinha_botao">
+                                <button type="button" class="botao deletar_cartao_comentario botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario" value=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                <button type="submit" class="botao botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            </div>
+                        </form>
+                        <div class="linha">
+                            <div class="img_cartao img_comentario">
+                                <img src="../images/perfil/<?php echo $usuarioChamado[5]; ?>" alt="img_cartao" />
+                            </div>
+                            <span class="nome_usuario_comentario"><?php echo $usuarioChamado[2];  ?></span>
+                            <span class="data_usuario_comentario"><?php echo dataHoraBras($resul[4]);  ?></span>
+                            <p class="comentario_cartao">
+                                <?php echo $resul[3];  ?>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Fim Container esquerdo -->
+            <?php 
+                } else { ?>
+                    <!-- Container esquerdo -->
+                    <div class="container_comentario esquerda_comentario">
+                        <form method="POST" action="">
+                            <div class="alinha_botao">
+                                <button type="button" class="botao deletar_cartao_comentario botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario" value=""><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                <button type="submit" class="botao botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                            </div>
+                        </form>
+                        <div class="linha">
+                            <div class="img_cartao img_comentario">
+                                <img src="../images/perfil/<?php $usuario = listarUsuario($resul[2]); echo $usuario[5]; ?>" alt="img_cartao" />
+                            </div>
+                            <span class="nome_usuario_comentario"><?php echo $usuario[2]; ?></span>
+                            <span class="data_usuario_comentario"><?php echo dataHoraBras($resul[4]);  ?></span>
+                            <p class="comentario_cartao">
+                                <?php echo $resul[3];  ?>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Fim Container esquerdo -->                
+            <?php } } ?>
+>>>>>>> 71250b03ac1ec21ef6f74b7d97a021040ae8b09b
 
             <div class="container_novo_comentario">
                 <div class="linha_vertical">
