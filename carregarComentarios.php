@@ -20,7 +20,7 @@ while ($resul = $listarComentarios->fetch_array(MYSQLI_NUM)) {
                                 <div class="alinha_botao">
                                     <button type="button" class="botao deletar_cartao_comentario botao_icone_comentario" id="deletar_cartao_comentario" name="deletar_cartao_comentario" value="<?php echo $resul[5];?>"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                     <button type="button" class="botao cancelar_cartao_comentario botao_icone_comentario" id="cancelar_cartao_comentario" name="cancelar_cartao_comentario"><i class="fa fa-close" aria-hidden="true"></i></button>
-                                    <button type="button" class="botao editar_cartao_comentario botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                    <button type="button" class="botao editar_cartao_comentario botao_icone_comentario" id="editar_cartao_comentario" name="editar_cartao_comentario"><i class="fa fa-pencil" aria-hidden="true"></i></button> 
                                 </div>
                             </form>
                         <?php } else { ?>
