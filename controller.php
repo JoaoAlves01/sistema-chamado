@@ -99,6 +99,25 @@
 		}
 	}
 
+	function addChamado(){
+		//Conexao
+		$conexao = model_conexao();
+
+		extract($_POST);
+
+		//Cria o sistema unico de idUI
+		$idUI = md5(microtime()) . '.' . $_SESSION['idUser'];	
+		$data = dataHora();		
+
+		//Sql instrucao
+		$sql = "INSERT INTO sc_chamado (idUsuario, categoria, titulo, texto, data, estatos, idUI) VALUES ('".$_SESSION['idUser']."', '".$status."', '".$titulo."', '".$texto."', '".$data."', 0, '".$idUI."')";
+
+		//executa a query
+		$resultado = $conexao->query($sql);
+
+		header("Location: telaCliente.php");
+	}
+
 	function comentario(){
 		//Conexao
 		$conexao = model_conexao();
@@ -106,10 +125,11 @@
 		extract($_POST);
 
 		//Cria o sistema unico de idUI
-		$idUI = md5(microtime()) . '.' . $_SESSION['idUser'];			
+		$idUI = md5(microtime()) . '.' . $_SESSION['idUser'];		
 
 		//Sql instrucao
-		$sql = "INSERT INTO sc_comentario (idChamada, idUsuario, texto, data, idUI) VALUES ('".$idChamada."', '".$_SESSION['idUser']."', '".$texto."', '".$_SESSION['data']."', '".$idUI."')";
+		$sql = "INSERT INTO sc_comentario (idChamada, idUsuario, texto, data, idUI, statos) 
+		VALUES ('".$idChamada."', '".$_SESSION['idUser']."', '".$texto."', '".$_SESSION['data']."', '".$idUI."', 0)";
 
 		//executa a query
 		$resultado = $conexao->query($sql);
@@ -121,6 +141,8 @@
 	function excluirComentario(){
 		//Conexao
 		$conexao = model_conexao();
+
+		var_dump($_POST);
 
 		extract($_POST);		
 
@@ -145,6 +167,17 @@
 		$conexao = model_conexao();
 
 		$sql = "SELECT * FROM sc_comentario WHERE idChamada = '".$id."' AND statos = 0";
+
+		$resultado = $conexao->query($sql);
+
+		return $resultado;
+	}
+
+	function listarChamadoUsuario(){
+
+		$conexao = model_conexao();
+
+		$sql = "SELECT * FROM sc_chamado WHERE idUsuario = '".$_SESSION['idUser']."'";
 
 		$resultado = $conexao->query($sql);
 
@@ -180,7 +213,7 @@
 
 		$conexao = model_conexao();
 
-		$sql = "SELECT * FROM sc_chamado WHERE idChamada = '".$idChamada."'";
+		$sql = "SELECT * FROM sc_chamado WHERE idUI = '".$idChamada."'";
 
 		$resultado = $conexao->query($sql);
 

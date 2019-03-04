@@ -20,13 +20,13 @@
                 <span class="titulo_modal">Abrir Chamado</span>
                 <span class="fechar_modal"><i class="fa fa-close" aria-hidden="true"></i></span>
             </div>
-            <form method="POST" action="">
+            <form method="POST" action="controller.php?f=addChamado">
                 <div class="linha linha_modal" id="modal_nv_pedido">
                     <label class="label_sistema">Título do cartão</label>
-                    <input type="text" class="campo_sistema" id="" name="" placeholder="Informe o nome do cartão..." />
+                    <input type="text" class="campo_sistema" name="titulo" placeholder="Informe o nome do cartão..." />
 
-                    <label class="label_sistema">Data para entrega</label>
-                    <input type="text" class="campo_sistema" id="data_novo_pedido" name="data_novo_pedido" placeholder="Informe uma data..." maxlength="10" />
+                    <label class="label_sistema">Texto</label>
+                    <textarea name="texto" id="texto"></textarea>
 
                     <label class="label_sistema">Status</label>
                     <select class="campo_sistema" name="status">

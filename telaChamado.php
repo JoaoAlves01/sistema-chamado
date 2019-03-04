@@ -48,7 +48,7 @@
                     while ($resul = $chamado_urgentes->fetch_array(MYSQLI_NUM)) { 
                     ?>
                     <!-- item Cartao -->
-                    <a href="<?php echo 'cartao.php?id='.$resul[0]; ?>">
+                    <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
                         <div class="box_solicitacao">
                             <div class="linha_vertical">
                                 <span class="titulo_cartao">
@@ -85,7 +85,7 @@
                     while ($resul = $chamado_andamentos->fetch_array(MYSQLI_NUM)) { 
                     ?>
                     <!-- item Cartao -->
-                    <a href="<?php echo 'cartao.php?id='.$resul[0]; ?>">
+                    <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
                         <div class="box_solicitacao">
                             <div class="linha_vertical">
                                 <span class="titulo_cartao">
@@ -123,7 +123,7 @@
                     while ($resul = $chamado_concluidos->fetch_array(MYSQLI_NUM)) { 
                     ?>
                     <!-- item Cartao -->
-                    <a href="<?php echo 'cartao.php?id='.$resul[0]; ?>">
+                    <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
                         <div class="box_solicitacao">
                             <div class="linha_vertical">
                                 <span class="titulo_cartao">

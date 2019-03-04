@@ -5,7 +5,7 @@ $_SESSION['chamado'] = listarChamadoId($_SESSION['id']);
 
 $usuarioChamado = listarUsuario($_SESSION['chamado'][1]);
 
-$listarComentarios = listarComentarios($_SESSION['id']);
+$listarComentarios = listarComentarios($_SESSION['chamado'][0]);
 
 while ($resul = $listarComentarios->fetch_array(MYSQLI_NUM)) {
                 

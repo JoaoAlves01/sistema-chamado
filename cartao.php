@@ -15,9 +15,24 @@
         $usuarioChamado = listarUsuario($_SESSION['chamado'][1]);
 
         //Listar comentarios
-        $listarComentarios = listarComentarios($_SESSION['id']);
+        $listarComentarios = listarComentarios($_SESSION['chamado'][0]);
     }
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Sistema de Chamadas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-theme.min.css">
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/controle.js"></script> 
+</head>
+<body>
         <div class="container_info_cartao"> 
             <div class="linha">
                 <div class="img_cartao" id="img_cartao">
@@ -76,7 +91,7 @@
                     <div class="img_cartao img_comentario" id="comentar">
                         <img src="../images/perfil/<?php echo $_SESSION['foto']; ?>" alt="img_cartao" />
                     </div>
-                    <input type="hidden" id="idChamada" name="idChamada" value="<?php echo $_SESSION['id']; ?>">
+                    <input type="hidden" id="idChamada" name="idChamada" value="<?php echo $_SESSION['chamado'][0]; ?>">
                     <input type="text" class="campo_sistema" id="nome_cartao_urgente" name="texto" placeholder="Digite aqui..." />
                     <button type="submit" class="botao botao_icone enviar_msg" id="enviar_msg" name="enviar_msg">Enviar</button>
                 </div>
@@ -120,6 +135,8 @@
                 });
             });
         </script>
+        <script src="lib/js/tinymce/tinymce.min.js"></script>
+    <script src="lib/js/library.js"></script>
 <?php
     include("footer_cartao.php");
 ?>
