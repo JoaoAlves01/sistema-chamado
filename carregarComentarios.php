@@ -59,7 +59,7 @@ while ($resul = $listarComentarios->fetch_array(MYSQLI_NUM)) {
                             </form>
                         <?php } else { ?>
 
-                        <div class="container_comentario esquerda_comentario">
+                        <div class="container_comentario">
 
                         <?php } ?>
 
