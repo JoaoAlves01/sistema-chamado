@@ -1,5 +1,4 @@
 <?php
-    //include("cabecalho_cartao.php");
     include("controller.php");
 
     if (isset($_SESSION['tipoUsuario'])) {
@@ -14,7 +13,10 @@
 
     $chamado_urgentes = listarChamado('urgente');
     $chamado_andamentos = listarChamado('andamento');
-    $chamado_concluidos = listarChamadoConcluido();    
+    $chamado_concluidos = listarChamadoConcluido();
+
+    //Lista abertura de chamados 
+    $listarChamadoUsuario = listarChamadoUsuario(); 
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,11 +28,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
     <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-theme.min.css">
     <script src="lib/js/jquery.js"></script>
     <script src="lib/js/controle.js"></script> 
 </head>
 <body>
     <?php include 'cabecalho_cartao.php'; ?>
+    
         <div class="box_visul_pedido">
             <div class="linha_vertical" id="linha_titulo_cliente">
                 <div class="tipo_pedido"></div>
@@ -57,104 +61,45 @@
 
             </div>
 
-            <!-- Começa pegando por aqui noob-->
-            <div class="linha_vertical lista_pedido">
+            <?php while ($resul = $listarChamadoUsuario->fetch_array(MYSQLI_NUM)) {   ?>
+                <!-- Linha pedido -->
+                
+                <div class="linha_vertical lista_pedido">
 
-                <div class="tipo_pedido">
-                    <i class="fa fa-frown-o" aria-hidden="true"></i>
-                </div>
+                    <div class="tipo_pedido">
+                        <i class="fa fa-frown-o" aria-hidden="true"></i>
+                    </div>
 
-                <div class="titulo_pedido">
-                    <span class="titulos_box_pedido">Nome do cartão de pedido solicitado</span>
-                </div>
+                    <div class="titulo_pedido">
+                        <span class="titulos_box_pedido"><?php echo $resul[3]; ?></span>
+                    </div>
 
-                <div class="data_pedido">
-                    <span class="titulos_box_pedido">00/00/0000</span>
-                </div>
+                    <div class="data_pedido">
+                        <span class="titulos_box_pedido"><?php echo dataHoraBras($resul[5]); ?></span>
+                    </div>
 
-                <div class="tecnico_resp_pedido">
-                    <span class="titulos_box_pedido">João Pedro Alves de Sousa</span>
-                </div>
+                    <div class="tecnico_resp_pedido">
+                        <span class="titulos_box_pedido"><?php echo $resul[1]; ?></span>
+                    </div>
 
-                <div class="status_pedido">
-                    <span class="titulos_box_pedido">Urgente</span>
-                </div>
+                    <div class="status_pedido">
+                        <span class="titulos_box_pedido"><?php echo $resul[2]; ?></span>
+                    </div>                    
 
-                <div class="botao_pedido">
-                    <form method="POST" action="">
-                        <div class="alinhar_botao">
-                            <button type="submit" class="botao botao_cliente_icone visualizar_modal" id="visualizar_pedido" name="visualizar_pedido" value=""><i class="fa fa-eye" aria-hidden="true"></i></button>
-                            <button type="submit" class="botao botao_cliente_icone editar_modal" id="editar_pedido" name="editar_pedido" value=""><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                            <button type="button" class="botao botao_cliente_icone excluir_modal" id="excluir_pedido" name="excluir_pedido" value="1"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </form>
+                    <div class="botao_pedido">
+                            <div class="alinhar_botao">
+                                <a href="<?php echo 'cartao.php?id='.$resul[7];  ?>"><button type="submit" class="botao botao_cliente_icone visualizar_modal" id="visualizar_pedido" name="visualizar_pedido" value="<?php echo $resul[7]; ?>"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
+                                <button type="submit" class="botao botao_cliente_icone editar_modal" id="editar_pedido" name="editar_pedido" value=""><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                                <button type="button" class="botao botao_cliente_icone excluir_modal" id="excluir_pedido" name="excluir_pedido" value="1"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            </div>
+                    </div>
                 </div>
-            </div>
+                <!-- Fim Linha pedido -->
+            <?php }  ?>
 
-            <div class="linha_vertical lista_pedido">
-                <div class="tipo_pedido">
-                    <i class="fa fa-cogs" aria-hidden="true"></i>
-                </div>
-
-                <div class="titulo_pedido">
-                    <span class="titulos_box_pedido">Nome do cartão de pedido solicitado</span>
-                </div>
-
-                <div class="data_pedido">
-                    <span class="titulos_box_pedido">00/00/0000</span>
-                </div>
-
-                <div class="tecnico_resp_pedido">
-                    <span class="titulos_box_pedido">João Pedro Alves de Sousa</span>
-                </div>
-
-                <div class="status_pedido">
-                    <span class="titulos_box_pedido">Andamento</span>
-                </div>
-
-                <div class="botao_pedido">
-                    <form method="POST" action="">
-                        <div class="alinhar_botao">
-                            <button type="submit" class="botao botao_cliente_icone" id="visualizar_pedido" name="visualizar_pedido"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                            <button type="submit" class="botao botao_cliente_icone" id="editar_pedido" name="editar_pedido"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                            <button type="button" class="botao botao_cliente_icone excluir_modal" id="excluir_pedido" name="excluir_pedido"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <div class="linha_vertical lista_pedido">
-                <div class="tipo_pedido">
-                    <i class="fa fa-smile-o" aria-hidden="true"></i>
-                </div>
-
-                <div class="titulo_pedido">
-                    <span class="titulos_box_pedido">Nome do cartão de pedido solicitado</span>
-                </div>
-
-                <div class="data_pedido">
-                    <span class="titulos_box_pedido">00/00/0000</span>
-                </div>
-
-                <div class="tecnico_resp_pedido">
-                    <span class="titulos_box_pedido">João Pedro Alves de Sousa</span>
-                </div>
-
-                <div class="status_pedido">
-                    <span class="titulos_box_pedido">Concluído</span>
-                </div>
-
-                <div class="botao_pedido">
-                    <form method="POST" action="">
-                        <div class="alinhar_botao">
-                            <button type="submit" class="botao botao_cliente_icone" id="visualizar_pedido" name="visualizar_pedido"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                            <button type="submit" class="botao botao_cliente_icone" id="editar_pedido" name="editar_pedido"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                            <button type="button" class="botao botao_cliente_icone excluir_modal" id="excluir_pedido" name="excluir_pedido"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-                        </div>
-                    </form>
-                </div>
-            </div>
         </div>
     </div>
 </body>
+    <script src="lib/js/tinymce/tinymce.min.js"></script>
+    <script src="lib/js/library.js"></script>
 </html>
