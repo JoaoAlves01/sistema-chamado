@@ -30,7 +30,7 @@
                 <span class="situacao_pedido">Status do Pedido<small>Acompanhe aqui o status do seu pedido</small></span>
             </div>
             
-            <div class="linha_vertical">
+            <div class="linha_vertical" id="status_timeline">
                 <div class="status status_inicio" id="status_inicio">
                     <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
                     <span class="titulo_status">Início</span>
@@ -60,9 +60,11 @@
 
             <?php if ($_SESSION['chamado'][1] == $_SESSION['idUser']) { ?>
             <form method="POST" action="">
-                <div class="alinha_botao" id="linha_post">
-                    <button type="submit" class="botao botao_icone editar_cartao" id="editar_cartao" name="editar_cartao"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</button>
-                    <button type="button" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao" value=""><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
+                    <div class="alinha_botao" id="linha_post">
+                    <div class="container_botao_post">
+                        <button type="submit" class="botao botao_icone editar_cartao" id="editar_cartao" name="editar_cartao"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</button>
+                        <button type="button" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao" value=""><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
+                    </div>
                 </div>
             </form>
             <?php } ?>

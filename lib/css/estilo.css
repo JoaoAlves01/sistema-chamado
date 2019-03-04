@@ -596,6 +596,7 @@
     width: 100%;
     height: 5px;
     background: #DFE3E6;
+    z-index: 1;
 }
 
 .status:after{
@@ -608,6 +609,7 @@
     width: 100%;
     height: 5px;
     background: #DFE3E6;
+    z-index: 2;
 }
 
 .status:last-child:after,

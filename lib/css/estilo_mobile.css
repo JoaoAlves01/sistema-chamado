@@ -1,5 +1,18 @@
 @media only screen and (max-width: 1200px){
 
+    /*Config da timeline*/
+    .status{
+        width: 70px;
+        height: 70px;
+        margin-right: 6.3%;
+        margin-left: 6.3%;
+    }
+
+    /*Config comentarios*/
+    .balao{
+        width: 90%;
+        margin-left: 50px;
+    }
 }
 
 @media only screen and (max-width: 1199px){
@@ -13,32 +26,242 @@
         flex-wrap: nowrap;
         overflow-x: auto;
         overflow-y: hidden;
+        white-space: nowrap;
     }
 
     .box_pedido{
-        width: 300px;
-        box-sizing: border-box;
-        white-space: nowrap;
-        word-wrap: break-word;
+        min-width: 350px;
+        margin-right: 20px;
+    }
+
+    .descricao_cartao{
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /*Timeline*/
+    .status:before{
+        left: -60px;
+        width: 80%;
+    }
+    
+    .status:after{
+        right: -60px;
+        width: 80%;
+    }
+
+    /*Config comentarios*/
+    .balao{
+        width: 86%;
+        margin-left: 55px;
+    }
+
+    .container_novo_comentario .campo_sistema{
+        width: 70%;
     }
 }
 
 @media only screen and (max-width: 768px){
     
+    /*Timeline*/
+    #status_timeline{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .status:before{
+        left: -46px;
+        width: 61%;
+    }
+    
+    .status:after{
+        right: -46px;
+        width: 61%;
+    }
+
+    /*Config dos comentarios*/
+    .balao {
+        width: 81%;
+    }
+
+    .comentario_cartao,
+    .esquerda_comentario .comentario_cartao{
+        width: 90%;
+    }
 }
 
 @media only screen and (max-width: 767px){
     
+    .faixa_info {
+        padding: 10px 0 20px 0;
+    }
+
+    /*Icones de info*/
+    .box_trofeu{
+        width: 50px;
+        height: 50px;
+    }
+
+    .box_trofeu i{
+        font-size: 35px;
+    }
+
+    /*Config da pagina de chamado*/
+    .box_pedido{
+        min-width: 300px;
+        margin-right: 20px;
+    }
+
+    /*Config comentarios*/
+    .status{
+        width: 60px;
+        height: 60px;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .status:before,
+    .status:after{
+        display: none;
+    }
+
+    /*Config comentarios*/
+    .balao,
+    .digitar_comentario{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+
+    .box_pontos{
+        display: none;
+    }
+
+    .envelope{
+        padding: 20px 10px;
+    }
+
+    /*Config da pagina de chamado*/
+    .box_pedido{
+        min-width: 350px;
+        margin-right: 25px;
+    }
+
+    /*Config dos comentarios*/
+    #status_timeline{
+        flex-wrap: wrap;
+    }
+
+    .status{
+        width: 70px;
+        height: 70px;
+        margin: 0 auto;
+        margin-right: 10%;
+        margin-left: 10%;
+    }
+
+    .status:nth-last-child(-n+2){
+        margin-top: 50px;
+    }
+
+    .container_botao_post{
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .nome_usuario_comentario{
+        top: 0;
+    }
+    
+    .data_usuario_comentario{
+        top: 12px;
+        right: 5px;
+    }
+
+    .comentario_cartao{
+        font-size: 14px;
+    }
+
+    .enviar_msg{
+        width: 100px;
+        margin-right: 0;
+        margin-top: 5px;
+    }
 }
 
 @media only screen and (max-width: 480px){
-    
+   
+    /*modal*/
+    .modal_exclur_pedido{
+        width: 380px;
+    }
 }
 
 @media only screen and (max-width: 380px){
     
+    /*modal*/
+    .modal_exclur_pedido{
+        width: 300px;
+    }
+
+    /*Config da pagina de chamado*/
+    .box_pedido{
+        min-width: 300px;
+        margin-right: 25px;
+    }
+
+    /*Config dos comentario*/
+    .container_info_cartao{
+        width: 100%;
+    }
+    
+    .status{
+        width: 90px;
+        height: 90px;
+        margin-top: 40px;
+    }
+
+    .status:first-child{
+        margin-top: 0;
+    }
+
+    .titulo_status{
+        top: 105px;
+    }
+
+    .data_usuario_comentario {
+        top: 25px;
+        right: 60%;
+    }
+
+    .comentario_cartao, 
+    .esquerda_comentario .comentario_cartao {
+        width: 80%;
+    }
+
+    .digitar_comentario {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    #comentar{
+        display: none;
+    }
+
+    .container_novo_comentario .campo_sistema {
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 @media only screen and (max-width: 320px){
     
+    /*Config da pagina de chamado*/
+    .box_pedido{
+        min-width: 280px;
+        margin-right: 25px;
+    }
 }
