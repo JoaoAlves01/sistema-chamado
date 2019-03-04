@@ -18,7 +18,7 @@
         $listarComentarios = listarComentarios($_SESSION['chamado'][0]);
     }
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -32,7 +32,7 @@
     <script src="lib/js/jquery.js"></script>
     <script src="lib/js/controle.js"></script> 
 </head>
-<body>
+<body> -->
         <div class="container_info_cartao"> 
             <div class="linha">
                 <div class="img_cartao" id="img_cartao">

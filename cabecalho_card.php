@@ -30,7 +30,7 @@
         </div>       
     </div>
 
-    <div class="faixa_info urgente">
+    <div class="faixa_info">
         <div class="box_pontos" id="faixa_cartao">
             <div class="box_trofeu">
                 <i class="fa fa-th-list" aria-hidden="true"></i>
