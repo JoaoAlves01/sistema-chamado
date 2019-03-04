@@ -11,12 +11,15 @@
     /*Config da pagina de chamado*/
     #container_cartao{
         flex-wrap: nowrap;
-        overflow-x: scroll;
+        overflow-x: auto;
         overflow-y: hidden;
     }
 
     .box_pedido{
         width: 300px;
+        box-sizing: border-box;
+        white-space: nowrap;
+        word-wrap: break-word;
     }
 }
 
