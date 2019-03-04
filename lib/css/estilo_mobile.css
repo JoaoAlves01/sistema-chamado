@@ -21,6 +21,18 @@
 
 @media only screen and (max-width: 991px){
     
+    /*Config do perfil*/
+    .img_perfil{
+        top: 80px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .pontuacao{
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+
     /*Config da pagina de chamado*/
     #container_cartao{
         flex-wrap: nowrap;
@@ -63,6 +75,11 @@
 
 @media only screen and (max-width: 768px){
     
+    /*Config do perfil*/
+    .box_perfil{
+        width: 90%;
+    }
+
     /*Timeline*/
     #status_timeline{
         display: flex;
@@ -199,6 +216,32 @@
 }
 
 @media only screen and (max-width: 380px){
+    
+    /*Config do perfil*/
+    .titulo_perfil{
+        font-size: 20px;
+    }
+
+    .titulo_perfil small{
+        font-size: 12px;
+    }
+
+    .pontuacao{
+        width: 50%;
+        margin-top: 0;
+    }
+
+    .pontuacao:first-child{
+        margin-top: 20px;
+    }
+    
+    .pontuacao:nth-child(3n+0):after{
+        display: block;
+    }
+
+    .pontuacao:nth-child(2n+0):after{
+        display: none;
+    }
     
     /*modal*/
     .modal_exclur_pedido{
