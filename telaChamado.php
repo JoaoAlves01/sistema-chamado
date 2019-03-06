@@ -45,30 +45,27 @@
                 <div class="capsula_pedidos urgente_scroll">
 
                     <?php 
-                    while ($resul = $chamado_urgentes->fetch_array(MYSQLI_NUM)) { 
+                    while ($resul = $chamado_urgentes->fetch_array(MYSQLI_NUM)) {
+                        if ($_SESSION['idUser'] != $resul[1]) {
                     ?>
                     <!-- item Cartao -->
-                    <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
-                        <div class="box_solicitacao">
-                            <div class="linha_vertical">
-                                <span class="titulo_cartao">
-                                    <?php echo $resul[3];  ?>
-                                </span>
-
-                                <div class="img_cartao">
-                                    <img src="img/img_cartao.jpg" alt="img_cartao" />
+                        <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
+                            <div class="box_solicitacao">
+                                <div class="linha_vertical">
+                                    <span class="titulo_cartao">
+                                        <?php echo $resul[3];  ?>
+                                    </span>
+                                </div>
+                                <div class="descricao_cartao">
+                                   <?php echo $resul[4];  ?>
+                                </div>
+                                <div class="tempo_cartao">
+                                    <i class="fa fa-clock-o" aria-hidden="true"><span><?php echo dataHoraBras($resul[5]);  ?></span></i>
                                 </div>
                             </div>
-                            <div class="descricao_cartao">
-                               <?php echo $resul[4];  ?>
-                            </div>
-                            <div class="tempo_cartao">
-                                <i class="fa fa-clock-o" aria-hidden="true"><span><?php echo dataHoraBras($resul[5]);  ?></span></i>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
                     <!-- Fim item Cartao -->
-                    <?php } ?>
+                    <?php } } ?>
 
                 </div>            
             </div>
@@ -82,7 +79,8 @@
                 <div class="capsula_pedidos andamento_scroll">
 
                     <?php 
-                    while ($resul = $chamado_andamentos->fetch_array(MYSQLI_NUM)) { 
+                    while ($resul = $chamado_andamentos->fetch_array(MYSQLI_NUM)) {
+                        if ($_SESSION['idUser'] != $resul[1]) {
                     ?>
                     <!-- item Cartao -->
                     <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
@@ -91,10 +89,6 @@
                                 <span class="titulo_cartao">
                                     <?php echo $resul[3];  ?>
                                 </span>
-
-                                <div class="img_cartao">
-                                    <img src="img/img_cartao.jpg" alt="img_cartao" />
-                                </div>
                             </div>
                             
                             <div class="descricao_cartao">
@@ -107,7 +101,7 @@
                         </div>
                     </a>
                     <!-- Fim item Cartao -->
-                    <?php } ?>
+                    <?php } } ?>
 
                 </div>
             </div>
@@ -121,6 +115,7 @@
 
                     <?php 
                     while ($resul = $chamado_concluidos->fetch_array(MYSQLI_NUM)) { 
+                        if ($_SESSION['idUser'] != $resul[1]) {
                     ?>
                     <!-- item Cartao -->
                     <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
@@ -129,10 +124,6 @@
                                 <span class="titulo_cartao">
                                     <?php echo $resul[3];  ?>
                                 </span>
-
-                                <div class="img_cartao">
-                                    <img src="img/img_cartao.jpg" alt="img_cartao" />
-                                </div>
                             </div>
                             
                             <div class="descricao_cartao">
@@ -145,7 +136,7 @@
                         </div>
                     </a>
                     <!-- Fim item Cartao -->
-                    <?php } ?>
+                    <?php } } ?>
 
                 </div>
             </div>

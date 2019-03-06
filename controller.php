@@ -99,6 +99,48 @@
 		}
 	}
 
+	function avancar(){
+		//Conexao
+		$conexao = model_conexao();
+
+		if ($_SESSION['statusPedido'] == 'Urgente') {
+		 	$statusPedido = 'Andamento';
+
+		} else if ($_SESSION['statusPedido'] == 'Andamento') {
+			$statusPedido = 'Feedback';
+
+		} else if ($_SESSION['statusPedido'] == 'Feedback') {
+			$statusPedido = 'Concluido';
+
+		}
+
+		echo $statusPedido; 	
+
+		//Sql instrucao
+		$sql = "UPDATE sc_chamado SET categoria = '".$statusPedido ."' WHERE idUI ='".$_SESSION['id']."'";
+
+		//executa a query
+		$resultado = $conexao->query($sql);
+
+		header("Location: cartao.php?id=".$_SESSION['id']);
+
+	}
+
+	function excluirChamado(){
+		//Conexao
+		$conexao = model_conexao();
+
+		extract($_POST);		
+
+		//Sql instrucao
+		$sql = "UPDATE sc_chamado SET estatos = '1' WHERE idUI ='".$cancelar_pedido."'";
+
+		//executa a query
+		$resultado = $conexao->query($sql);
+
+		header("Location: cartao.php?id=".$_SESSION['id']);
+	}
+
 	function addChamado(){
 		//Conexao
 		$conexao = model_conexao();
@@ -142,8 +184,6 @@
 		//Conexao
 		$conexao = model_conexao();
 
-		var_dump($_POST);
-
 		extract($_POST);		
 
 		//Sql instrucao
@@ -153,7 +193,6 @@
 		$resultado = $conexao->query($sql);
 
 		header("Location: cartao.php?id=".$_SESSION['id']);
-
 	}
 
 	//deslogar
@@ -177,7 +216,7 @@
 
 		$conexao = model_conexao();
 
-		$sql = "SELECT * FROM sc_chamado WHERE idUsuario = '".$_SESSION['idUser']."'";
+		$sql = "SELECT * FROM sc_chamado WHERE idUsuario = '".$_SESSION['idUser']."' AND categoria != 'Concluido'";
 
 		$resultado = $conexao->query($sql);
 
@@ -202,7 +241,11 @@
 
 		$conexao = model_conexao();
 
-		$sql = "SELECT * FROM sc_chamado WHERE categoria = '".$categoria."' AND estatos = 0";
+		if ($categoria == 'andamento') {
+			$sql = "SELECT * FROM sc_chamado WHERE categoria = '".$categoria."' OR categoria = 'Feedback' AND estatos = 0";
+		} else {
+			$sql = "SELECT * FROM sc_chamado WHERE categoria = '".$categoria."' AND estatos = 0";
+		}
 
 		$resultado = $conexao->query($sql);
 
@@ -226,7 +269,7 @@
 
 		$conexao = model_conexao();
 
-		$sql = "SELECT * FROM sc_chamado WHERE estatos = 1";
+		$sql = "SELECT * FROM sc_chamado WHERE categoria = 'Concluido'";
 
 		$resultado = $conexao->query($sql);
 

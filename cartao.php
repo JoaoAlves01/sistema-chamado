@@ -3,9 +3,7 @@
 
     if (!isset($_SESSION['user'])) {
         header("Location: login.php?login=n");
-    }
-
-    include("cabecalho_card.php");
+    }    
 
     if (isset($_GET['id'])) {
         $_SESSION['id'] = $_GET['id'];
@@ -17,22 +15,25 @@
         //Listar comentarios
         $listarComentarios = listarComentarios($_SESSION['chamado'][0]);
     }
+
+    include("cabecalho_card.php");
 ?>
-<!-- <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Sistema de Chamadas</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
-    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-theme.min.css">
-    <script src="lib/js/jquery.js"></script>
-    <script src="lib/js/controle.js"></script> 
-</head>
-<body> -->
+    <div class="faixa_info">
+        <div class="box_pontos" id="faixa_cartao">
+            <div class="box_trofeu">
+                <i class="fa fa-th-list" aria-hidden="true"></i>
+            </div>
+            <span class="titulo_cartao"><?php echo $_SESSION['chamado'][3]; ?></span>
+        </div>
+
+        <div class="box_pontos" id="faixa_voltar">
+            <div class="box_trofeu">
+                <i class="fa fa-close" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="envelope">
         <div class="container_info_cartao"> 
             <div class="linha">
                 <div class="img_cartao" id="img_cartao">
@@ -46,25 +47,181 @@
             </div>
             
             <div class="linha_vertical" id="status_timeline">
-                <div class="status status_inicio" id="status_inicio">
-                    <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
-                    <span class="titulo_status">Início</span>
-                </div>
+                <?php
+                $_SESSION['statusPedido'] = $_SESSION['chamado'][2];
 
-                <div class="status status_andamento" id="status_andamento">
-                    <i class="fa fa-spinner" aria-hidden="true"></i>
-                    <span class="titulo_status">Andamento</span>
-                </div>
+                switch ($_SESSION['chamado'][2]) {
+                    case 'Urgente': ?>
+                        <?php if ($_SESSION['chamado'][1] != $_SESSION['idUser']) { ?>
 
-                <div class="status status_feedback" id="status_feedback">
-                <i class="fa fa-comments-o" aria-hidden="true"></i>
-                    <span class="titulo_status">Feedback</span>
-                </div>
+                            <div class="status status_inicio" id="status_inicio">
+                                <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                                <span class="titulo_status">Início</span>
+                            </div>
 
-                <div class="status status_final" id="status_final">
-                    <i class="fa fa-check-circle-o" aria-hidden="true"></i>
-                    <span class="titulo_status">Concluído/Cancelado</span>
-                </div>
+                            <div class="status status_modal" id="status_andamento">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                                <span class="titulo_status">Andamento</span>
+                            </div>
+
+                            <div class="status" id="status_feedback">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Feedback</span>
+                            </div>
+
+                            <div class="status" id="status_final">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Concluído</span>
+                            </div>
+
+                        <?php } else { ?>
+
+                            <div class="status status_inicio" id="status_inicio">
+                                <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                                <span class="titulo_status">Início</span>
+                            </div>
+
+                            <div class="status" id="status_andamento">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                                <span class="titulo_status">Andamento</span>
+                            </div>
+
+                            <div class="status" id="status_feedback">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Feedback</span>
+                            </div>
+
+                            <div class="status" id="status_final">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Concluído</span>
+                            </div>
+
+                        <?php }?>
+                        
+
+                <?php        break;
+                    case 'Andamento': ?>
+
+                        <?php if ($_SESSION['chamado'][1] != $_SESSION['idUser']) { ?>
+
+                            <div class="status status_inicio" id="status_inicio">
+                                <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                                <span class="titulo_status">Início</span>
+                            </div>
+
+                            <div class="status status_andamento" id="status_andamento">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                                <span class="titulo_status">Andamento</span>
+                            </div>
+
+                            <div class="status status_modal" id="status_feedback">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Feedback</span>
+                            </div>
+
+                            <div class="status" id="status_final">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Concluído</span>
+                            </div>
+
+                        <?php } else { ?>
+
+                            <div class="status status_inicio" id="status_inicio">
+                                <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                                <span class="titulo_status">Início</span>
+                            </div>
+
+                            <div class="status status_andamento" id="status_andamento">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                                <span class="titulo_status">Andamento</span>
+                            </div>
+
+                            <div class="status" id="status_feedback">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Feedback</span>
+                            </div>
+
+                            <div class="status" id="status_final">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Concluído</span>
+                            </div>
+
+                        <?php }?>
+
+                        
+
+                <?php        break;
+                    case 'Feedback': ?>
+
+                        <?php if ($_SESSION['chamado'][1] != $_SESSION['idUser']) { ?>
+
+                            <div class="status status_inicio" id="status_inicio">
+                                <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                                <span class="titulo_status">Início</span>
+                            </div>
+
+                            <div class="status status_andamento" id="status_andamento">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                                <span class="titulo_status">Andamento</span>
+                            </div>
+
+                            <div class="status status_feedback" id="status_feedback">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Feedback</span>
+                            </div>
+
+                            <div class="status" id="status_final">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Concluído</span>
+                            </div>
+
+                        <?php } else { ?>
+
+                            <div class="status status_inicio" id="status_inicio">
+                                <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                                <span class="titulo_status">Início</span>
+                            </div>
+
+                            <div class="status status_andamento" id="status_andamento">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                                <span class="titulo_status">Andamento</span>
+                            </div>
+
+                            <div class="status status_feedback" id="status_feedback">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Feedback</span>
+                            </div>
+
+                            <div class="status status_modal" id="status_final">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Concluído</span>
+                            </div>
+
+                        <?php }?>
+                        
+
+                <?php        break;
+                    case 'Concluido': ?>
+                        <div class="status status_inicio" id="status_inicio">
+                            <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                            <span class="titulo_status">Início</span>
+                        </div>
+
+                        <div class="status status_andamento" id="status_andamento">
+                            <i class="fa fa-spinner" aria-hidden="true"></i>
+                            <span class="titulo_status">Andamento</span>
+                        </div>
+
+                        <div class="status status_feedback" id="status_feedback">
+                            <i class="fa fa-comments-o" aria-hidden="true"></i>
+                            <span class="titulo_status">Feedback</span>
+                        </div>
+
+                        <div class="status status_final" id="status_final">
+                            <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                            <span class="titulo_status">Concluído</span>
+                        </div>
+                <?php   break; } ?>
             </div>
 
             <div class="titulo_descricao_cartao">
@@ -88,16 +245,18 @@
 
             </div>
 
-            <div class="container_novo_comentario">
-                <div class="linha_vertical">
-                    <div class="img_cartao img_comentario" id="comentar">
-                        <img src="../images/perfil/<?php echo $_SESSION['foto']; ?>" alt="img_cartao" />
+            <?php if ($_SESSION['chamado'][2] != 'Concluido') { ?>
+                <div class="container_novo_comentario">
+                    <div class="linha_vertical">
+                        <div class="img_cartao img_comentario" id="comentar">
+                            <img src="../images/perfil/<?php echo $_SESSION['foto']; ?>" alt="img_cartao" />
+                        </div>
+                        <input type="hidden" id="idChamada" name="idChamada" value="<?php echo $_SESSION['chamado'][0]; ?>">
+                        <input type="text" class="campo_sistema" id="nome_cartao_urgente" name="texto" placeholder="Digite aqui..." />
+                        <button type="submit" class="botao botao_icone enviar_msg" id="enviar_msg" name="enviar_msg">Enviar</button>
                     </div>
-                    <input type="hidden" id="idChamada" name="idChamada" value="<?php echo $_SESSION['chamado'][0]; ?>">
-                    <input type="text" class="campo_sistema" id="nome_cartao_urgente" name="texto" placeholder="Digite aqui..." />
-                    <button type="submit" class="botao botao_icone enviar_msg" id="enviar_msg" name="enviar_msg">Enviar</button>
                 </div>
-            </div>
+            <?php } ?>
         </div>
         <script>
             
@@ -138,7 +297,7 @@
             });
         </script>
         <script src="lib/js/tinymce/tinymce.min.js"></script>
-    <script src="lib/js/library.js"></script>
+        <script src="lib/js/library.js"></script>
 <?php
     include("footer_cartao.php");
 ?>

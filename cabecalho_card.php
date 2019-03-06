@@ -27,22 +27,20 @@
                     <button type="button" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Não</button>
                 </div>
             </form>
-        </div>       
-    </div>
-
-    <div class="faixa_info">
-        <div class="box_pontos" id="faixa_cartao">
-            <div class="box_trofeu">
-                <i class="fa fa-th-list" aria-hidden="true"></i>
+        </div>  
+        <div class="modal_trocar_status">
+            <div class="linha_vertical linha_modal">
+                <span class="titulo_modal">Avançar no Status do Pedido</span>
+                <span class="fechar_modal"><i class="fa fa-close" aria-hidden="true"></i></span>
             </div>
-            <span class="titulo_cartao">Título Cartão</span>
-        </div>
-
-        <div class="box_pontos" id="faixa_voltar">
-            <div class="box_trofeu">
-                <i class="fa fa-close" aria-hidden="true"></i>
+            <div class="linha linha_modal">
+                <label class="acao_desejada">Deseja realmente avançar no status de pedido!</label>
             </div>
-        </div>
+            <form method="POST" action="controller.php?f=avancar">
+                <div class="alinhar_botao_modal">
+                    <button type="submit" class="botao botao_icone" id="trocar_status" name="trocar_status">Sim</button>
+                    <button type="button" class="botao botao_icone cancelar_modal" id="cancelar_troca" name="cancelar_troca">Não</button>
+                </div>
+            </form>
+        </div>      
     </div>
-
-    <div class="envelope">

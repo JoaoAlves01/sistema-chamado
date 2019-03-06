@@ -15,40 +15,67 @@
             </form>
         </div>  
 
-        <div class="modal_novo_pedido">
-            <div class="linha_vertical linha_modal">
-                <span class="titulo_modal">Abrir Chamado</span>
-                <span class="fechar_modal"><i class="fa fa-close" aria-hidden="true"></i></span>
+        <?php
+            if ($_SESSION['tipoUsuario'] != 'tecnico') {
+
+          ?>
+            <div class="modal_novo_pedido">
+                <div class="linha_vertical linha_modal">
+                    <span class="titulo_modal">Abrir Chamado</span>
+                    <span class="fechar_modal"><i class="fa fa-close" aria-hidden="true"></i></span>
+                </div>
+                <form method="POST" action="controller.php?f=addChamado">
+                    <div class="linha linha_modal" id="modal_nv_pedido">
+                        <label class="label_sistema">Título do cartão</label>
+                        <input type="text" class="campo_sistema" name="titulo" placeholder="Informe o nome do cartão..." />
+
+                        <label class="label_sistema">Texto</label>
+                        <textarea name="texto" id="texto"></textarea>
+
+                        <label class="label_sistema">Status</label>
+                        <select class="campo_sistema" name="status">
+                            <option value="Urgente">Urgente</option>
+                            <option value="Andamento">Normal</option>
+                        </select>
+                    </div>
+                    <div class="alinhar_botao_modal">
+                        <button type="submit" class="botao botao_icone" id="salvar_pedido" name="salvar_pedido">Salvar</button>
+                        <button type="button" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Cancelar</button>
+                    </div>
+                </form>
             </div>
-            <form method="POST" action="controller.php?f=addChamado">
-                <div class="linha linha_modal" id="modal_nv_pedido">
-                    <label class="label_sistema">Título do cartão</label>
-                    <input type="text" class="campo_sistema" name="titulo" placeholder="Informe o nome do cartão..." />
+        <?php  } ?> 
 
-                    <label class="label_sistema">Texto</label>
-                    <textarea name="texto" id="texto"></textarea>
-
-                    <label class="label_sistema">Status</label>
-                    <select class="campo_sistema" name="status">
-                        <option value="Urgente">Urgente</option>
-                        <option value="Andamento">Normal</option>
-                    </select>
-                </div>
-                <div class="alinhar_botao_modal">
-                    <button type="submit" class="botao botao_icone" id="salvar_pedido" name="salvar_pedido">Salvar</button>
-                    <button type="button" class="botao botao_icone" id="cancelar_cancelar" name="cancelar_cancelar">Cancelar</button>
-                </div>
-            </form>
-        </div>       
     </div>
 
     <div class="faixa_info">
         <div class="box_pontos">
-            <div class="box_trofeu abrir_chamado">
-                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+            <div class="box_trofeu" id="img_usuario">
+                <img src="../images/perfil/<?php $usuarioChamado = listarUsuario($_SESSION['idUser']); echo $usuarioChamado[5]; ?>" alt="img_usuario" class="centralizar_img" />
             </div>
-            <span>Abrir<br>chamado</span>
         </div>
+
+        <div class="mini_menu_usuario">
+            <nav>
+                <ul class="menu">
+                    <li><a href="perfil.php?idUI="><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
+                    <li><a href="telaHistoricoChamado.php"><i class="fa fa-user" aria-hidden="true"></i>Histórico</a></li>
+                    <li><a href="deslogar.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Deslogar</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <?php
+            if ($_SESSION['tipoUsuario'] != 'tecnico') {
+        ?>
+
+            <div class="box_pontos">
+                <div class="box_trofeu abrir_chamado">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </div>
+                <span>Abrir<br>chamado</span>
+            </div>
+        <?php } ?>
 
         <div class="box_pontos">
             <div class="box_trofeu">

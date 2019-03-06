@@ -38,7 +38,7 @@
         <div class="box_visul_pedido">
             
             <?php 
-            if ($listarChamadoUsuario->num_rows) { ?>
+            if ($chamado_concluidos->num_rows) { ?>
                 <div class="linha_vertical" id="linha_titulo_cliente">
                     <div class="tipo_pedido"></div>
 
@@ -64,7 +64,7 @@
 
                 </div>
 
-                <?php while ($resul = $listarChamadoUsuario->fetch_array(MYSQLI_NUM)) {   ?>
+                <?php while ($resul = $chamado_concluidos->fetch_array(MYSQLI_NUM)) {   ?>
                 <!-- Linha pedido -->
                 
                 <div class="linha_vertical lista_pedido">
@@ -91,9 +91,7 @@
 
                     <div class="botao_pedido">
                             <div class="alinhar_botao">
-                                <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>"><button type="submit" class="botao botao_cliente_icone visualizar_modal" id="visualizar_pedido" name="visualizar_pedido" value="<?php echo $resul[7]; ?>"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
-                                <button type="submit" class="botao botao_cliente_icone editar_modal" id="editar_pedido" name="editar_pedido" value=""><i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                <button type="button" class="botao botao_cliente_icone excluir_modal" id="excluir_pedido" name="excluir_pedido" value="<?php echo $resul[7]; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                                <a href="<?php echo 'cartao.php?id='.$resul[7];  ?>"><button type="submit" class="botao botao_cliente_icone visualizar_modal" id="visualizar_pedido" name="visualizar_pedido" value="<?php echo $resul[7]; ?>"><i class="fa fa-eye" aria-hidden="true"></i></button></a>
                             </div>
                     </div>
                 </div>

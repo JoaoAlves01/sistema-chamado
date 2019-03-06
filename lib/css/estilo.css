@@ -154,6 +154,62 @@
 
 }
 
+#img_usuario{
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.centralizar_img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mini_menu_usuario{
+    display: none;
+    position: absolute;
+    top: 100px;
+    left: 90px;
+    width: 90px;
+    padding: 10px 20px;
+    border-radius: 3px;
+    color: #fff;
+    background: #009ABF;
+    z-index: 1;
+
+    animation-name: mover_modal;
+	animation-duration: .3s;
+	animation-timing-function: ease-out;
+}
+
+.mini_menu_usuario:after{
+    position: absolute;
+    top: -10px;
+    left: 5px;
+    content: "";
+    width: 20px;
+    height: 20px;
+    transform: rotate(-45deg);
+    background: #009ABF;
+}
+
+.menu{list-style: none;}
+
+.mini_menu_usuario .menu li{
+    text-align: left;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.mini_menu_usuario .menu a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.mini_menu_usuario .menu i{
+    padding-right: 10px;
+}
+
 /*Config do modal de novo pedido*/
 #modal_nv_pedido .campo_sistema{
     width: 100%;
@@ -584,6 +640,7 @@
     margin-left: 6%;
     border: 5px solid #DFE3E6;
     border-radius: 50%;
+    cursor: pointer;
     background: #fff;
 }
 
@@ -1040,7 +1097,8 @@
 }
 
 .modal_novo_pedido,
-.modal_exclur_pedido{
+.modal_exclur_pedido,
+.modal_trocar_status{
     display: none;
     position: relative;
     top: 60px;
@@ -1107,4 +1165,29 @@
     100% {top: -156px;}
     50% {top: -79px;}
 	100% {top: 60px;}
+}
+
+.fundao_nenhum{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    background: #dcdcdc;
+}
+
+.fundao_nenhum .titulo_nenhum{
+    text-align: center;
+    padding-top: 50px;
+    font-family: Roboto;
+    color: #234356;
+}
+
+.fundao_nenhum i{
+    display: block;
+    font-size: 80px;
+    font-weight: 300;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 30px;
+    color: #234356;
 }
