@@ -1,82 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt_br">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Titulo Cartão</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>School SAE | Dashboard </title>
-
-    <!-- Bootstrap -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- Animate.css -->
-    <link href="vendors/animate.css/animate.min.css" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="build/css/custom.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/estilo_mobile.css">
+    <script src="lib/js/jquery.js"></script> 
+    <script src="lib/js/controle.js"></script> 
   </head>
 
-  <body class="login">
-    <div>
-      <a class="hiddenanchor" id="signup"></a>
-      <a class="hiddenanchor" id="signin"></a>
-
-      <div class="login_wrapper">
-        <div class="animate form login_form">
-          <div><h1>Simulador de chamados</h1></div>
-          <section class="login_content">
+  <body>
+    <div class="container_form">
+        <!-- Box do cliente -->
+        <div class="box_cliente">
             <form method="POST" action="controller.php?f=loginT">
-
-              <h1>Login Técnico</h1>
-              <div>
-                <?php
-                //verifica se o login esta errado, recebendo via get a informação da url.
-                if (isset($_GET['login'])) {                
-              ?> 
-                <div class="alert alert-danger" role="alert">
-                  <strong>ERROR:</strong> Login ou senha inválidos!
+                <div class="linha_vertical">
+                    <span class="titulo_login">Login no sistema<small>Acessar como cliente</small></span>
                 </div>
-              <?php
-                }
-              ?>
-                <input type="text" name="login" class="form-control" placeholder="matricula" required="" />
-              </div>
-              <div>
-                <input type="submit" name="enviar" class="btn btn-default submit" value="Entrar">
-                <a class="reset_pass" href="#">Esqueceu sua senha?</a>
-              </div>
-            </form>
+                <div class="container_formulario">
+                    <span class="label_sistema">Matricula</span>
+                    <div class="linha">
+                    <?php
+                        //verifica se o login esta errado, recebendo via get a informação da url.
+                        if (isset($_GET['login'])) {                
+                    ?> 
+                        <div class="alert alert-danger" role="alert">
+                        <strong>ERROR:</strong> Login ou senha inválidos!
+                        </div>
+                    <?php
+                        }
+                    ?>
+                        <input type="text" class="campo_sistema" id="usuario" name="login" />
+                    </div>
 
-             <form method="POST" action="controller.php?f=loginU">
+                    <div class="linha_vertical" id="linha_post">
+                        <button type="submit" class="botao botao_icone" id="logar_sistema" name="enviar" value="Entrar"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</button>
+                    </div>
 
-              <h1>Login usúario</h1>
-              <div>
-                <?php
-                //verifica se o login esta errado, recebendo via get a informação da url.
-                if (isset($_GET['login'])) {                
-              ?> 
-                <div class="alert alert-danger" role="alert">
-                  <strong>ERROR:</strong> Login ou senha inválidos!
+                    <div class="linha_vertical">
+                        <a href="#" class="tipo_acesso">Acessar como técnico</a>
+                    </div>
                 </div>
-              <?php
-                }
-              ?>
-                <input type="text" name="login" class="form-control" placeholder="matricula" required="" />
-              </div>
-              <div>
-                <input type="submit" name="enviar" class="btn btn-default submit" value="Entrar">
-                <a class="reset_pass" href="#">Esqueceu sua senha?</a>
-              </div>
             </form>
-          </section>
         </div>
-      </div>
+
+        <!-- Box do tecnico -->
+        <div class="box_tecnico">
+            <form method="POST" action="controller.php?f=loginU">
+                <div class="linha_vertical">
+                    <span class="titulo_login">Login no sistema<small>Acessar como técnico</small></span>
+                </div>
+                <div class="container_formulario">
+                    <span class="label_sistema">Matricula</span>
+                    <?php
+                        //verifica se o login esta errado, recebendo via get a informação da url.
+                        if (isset($_GET['login'])) {                
+                    ?> 
+                    <div class="alert alert-danger" role="alert">
+                        <strong>ERROR:</strong> Login ou senha inválidos!
+                    </div>
+                    <?php
+                        }
+                    ?>
+                    <div class="linha">
+                        <input type="text" class="campo_sistema" name="login" placeholder="matricula" required=""  />
+                    </div>
+
+                    <div class="linha_vertical" id="linha_post">
+                        <button type="submit" class="botao botao_icone" id="logar_sistema" name="enviar" value="Entrar"><i class="fa fa-sign-in" aria-hidden="true"></i>Login</button>
+                    </div>
+
+                    <div class="linha_vertical">
+                        <a href="#" class="tipo_acesso">Acessar como cliente</a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
   </body>
 </html>

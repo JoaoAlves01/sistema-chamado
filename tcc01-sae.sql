@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 04-Mar-2019 às 00:27
+-- Generation Time: 06-Mar-2019 às 19:12
 -- Versão do servidor: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -360,7 +360,7 @@ INSERT INTO `professor` (`idProf`, `nome`, `sobrenome`, `dataNascimento`) VALUES
 
 CREATE TABLE `sc_chamado` (
   `idChamada` int(11) NOT NULL,
-  `idTecnico` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
   `categoria` varchar(25) NOT NULL,
   `titulo` varchar(50) NOT NULL,
   `texto` text NOT NULL,
@@ -373,11 +373,12 @@ CREATE TABLE `sc_chamado` (
 -- Extraindo dados da tabela `sc_chamado`
 --
 
-INSERT INTO `sc_chamado` (`idChamada`, `idTecnico`, `categoria`, `titulo`, `texto`, `data`, `estatos`, `idUI`) VALUES
-(1, 3, 'urgente', 'Titulo 1', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0, '0'),
-(2, 4, 'andamento', 'Titulo 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0, '0'),
-(3, 3, 'andamento', 'Titulo 3', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0, '0'),
-(4, 4, 'urgente', 'urgente 2', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.', '2019-03-05', 0, '0');
+INSERT INTO `sc_chamado` (`idChamada`, `idUsuario`, `categoria`, `titulo`, `texto`, `data`, `estatos`, `idUI`) VALUES
+(19, 3, 'Concluido', 'Trocar mouse do fablab', '<p>sasass</p>', '2019-03-06', 1, '984f8203d07d4568c52819a4ebb02f7e'),
+(20, 4, 'Feedback', 'titulo teste sera que vai?', '<p>sdsdds</p>', '2019-03-06', 0, '15c20adc138f5e6b5400e92f34e6f01e'),
+(21, 4, 'Urgente', 'sasa', '<p>asas</p>', '2019-03-06', 0, '14a54460d8d7e1bf1beaa99dc82642a1'),
+(22, 3, 'Urgente', 'dsd', '<p>sdsd</p>', '2019-03-06', 0, 'e97fe4f5c3885183952c9a5f01c78ff9'),
+(23, 3, 'Urgente', 'dsdsd', '<p>sdsdsdsd</p>', '2019-03-06', 0, '48a21f9db42b9b081c690b6d1f03f604');
 
 -- --------------------------------------------------------
 
@@ -394,19 +395,6 @@ CREATE TABLE `sc_comentario` (
   `idUI` varchar(32) NOT NULL,
   `statos` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `sc_comentario`
---
-
-INSERT INTO `sc_comentario` (`idComentario`, `idChamada`, `idUsuario`, `texto`, `data`, `idUI`, `statos`) VALUES
-(72, 1, 3, 'teste para ver se joao destruiu tudo.', '2019-03-04', 'cde6a9c8aab2a3529dc517340d28508d', 0),
-(73, 2, 3, 'teste do usuario! kkkkkkk', '2019-03-04', '720dd843993d51a2aeb9f80c385c057c', 0),
-(74, 2, 4, 'asasas', '2019-03-04', 'dd040c5214c9c7af95b8bf8d15fdf2c9', 0),
-(75, 1, 4, 'asasass', '2019-03-04', '721dd8ff219aa57436ea36699e9b0704', 0),
-(76, 1, 4, 'asasasass', '2019-03-04', '777713f42577a388e920579072e28983', 0),
-(77, 1, 4, 'sasass', '2019-03-04', '2654b797f89dc64fe06f7bea835a1bf3', 0),
-(78, 1, 3, 'ola como vai?', '2019-03-04', '6f9895ba74283daf6733a17951bef2c6', 0);
 
 -- --------------------------------------------------------
 
@@ -610,12 +598,12 @@ ALTER TABLE `professor`
 -- AUTO_INCREMENT for table `sc_chamado`
 --
 ALTER TABLE `sc_chamado`
-  MODIFY `idChamada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idChamada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `sc_comentario`
 --
 ALTER TABLE `sc_comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `turma`
 --
