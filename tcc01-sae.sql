@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Mar-2019 às 19:12
+-- Generation Time: 12-Mar-2019 às 00:48
 -- Versão do servidor: 10.1.24-MariaDB
 -- PHP Version: 7.1.6
 
@@ -376,9 +376,10 @@ CREATE TABLE `sc_chamado` (
 INSERT INTO `sc_chamado` (`idChamada`, `idUsuario`, `categoria`, `titulo`, `texto`, `data`, `estatos`, `idUI`) VALUES
 (19, 3, 'Concluido', 'Trocar mouse do fablab', '<p>sasass</p>', '2019-03-06', 1, '984f8203d07d4568c52819a4ebb02f7e'),
 (20, 4, 'Feedback', 'titulo teste sera que vai?', '<p>sdsdds</p>', '2019-03-06', 0, '15c20adc138f5e6b5400e92f34e6f01e'),
-(21, 4, 'Urgente', 'sasa', '<p>asas</p>', '2019-03-06', 0, '14a54460d8d7e1bf1beaa99dc82642a1'),
-(22, 3, 'Urgente', 'dsd', '<p>sdsd</p>', '2019-03-06', 0, 'e97fe4f5c3885183952c9a5f01c78ff9'),
-(23, 3, 'Urgente', 'dsdsd', '<p>sdsdsdsd</p>', '2019-03-06', 0, '48a21f9db42b9b081c690b6d1f03f604');
+(21, 4, 'Normal', 'sasa', '<p>asas</p>', '2019-03-06', 0, '14a54460d8d7e1bf1beaa99dc82642a1'),
+(22, 4, 'Urgente', 'dsd', '<p>sdsd</p>', '2019-03-06', 0, 'e97fe4f5c3885183952c9a5f01c78ff9'),
+(23, 3, 'Urgente', 'dsdsd', '<p>sdsdsdsd</p>', '2019-03-06', 0, '48a21f9db42b9b081c690b6d1f03f604'),
+(24, 3, 'Normal', 'dsds', '<p>sdsdsd</p>', '2019-03-12', 0, '25b8cdeaab3c14fce58cc2d013512596');
 
 -- --------------------------------------------------------
 
@@ -395,6 +396,13 @@ CREATE TABLE `sc_comentario` (
   `idUI` varchar(32) NOT NULL,
   `statos` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `sc_comentario`
+--
+
+INSERT INTO `sc_comentario` (`idComentario`, `idChamada`, `idUsuario`, `texto`, `data`, `idUI`, `statos`) VALUES
+(1, 22, 3, 'teste', '2019-03-12', '4e28bb0c58518a65b09a31a711c1c42e', 0);
 
 -- --------------------------------------------------------
 
@@ -598,12 +606,12 @@ ALTER TABLE `professor`
 -- AUTO_INCREMENT for table `sc_chamado`
 --
 ALTER TABLE `sc_chamado`
-  MODIFY `idChamada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `idChamada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `sc_comentario`
 --
 ALTER TABLE `sc_comentario`
-  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idComentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `turma`
 --

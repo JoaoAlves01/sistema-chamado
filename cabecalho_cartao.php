@@ -51,7 +51,7 @@
                         <label class="label_sistema">Status</label>
                         <select class="campo_sistema" name="status">
                             <option value="Urgente">Urgente</option>
-                            <option value="Andamento">Normal</option>
+                            <option value="Normal">Normal</option>
                         </select>
                     </div>
                     <div class="alinhar_botao_modal">
@@ -75,7 +75,14 @@
             <nav>
                 <ul class="menu">
                     <li><a href="perfil.php?idUI="><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
-                    <li><a href="telaHistoricoChamado.php"><i class="fa fa-user" aria-hidden="true"></i>Histórico</a></li>
+                    <?php 
+                        if (isset($_SESSION['tipoUsuario'])) {
+                            if ($_SESSION['tipoUsuario'] != 'tecnico') { ?>
+                              <li><a href="telaHistoricoChamado.php"><i class="fa fa-user" aria-hidden="true"></i>Histórico</a></li>
+                    <?php        }        
+                        }  
+                    ?>
+                    
                     <li><a href="deslogar.php"><i class="fa fa-sign-out" aria-hidden="true"></i>Deslogar</a></li>
                 </ul>
             </nav>

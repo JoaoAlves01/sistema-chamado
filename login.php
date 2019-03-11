@@ -17,7 +17,7 @@
     <div class="container_form">
         <!-- Box do cliente -->
         <div class="box_cliente">
-            <form method="POST" action="controller.php?f=loginT">
+            <form method="POST" action="controller.php?f=loginU">
                 <div class="linha_vertical">
                     <span class="titulo_login">Login no sistema<small>Acessar como cliente</small></span>
                 </div>
@@ -50,7 +50,7 @@
 
         <!-- Box do tecnico -->
         <div class="box_tecnico">
-            <form method="POST" action="controller.php?f=loginU">
+            <form method="POST" action="controller.php?f=loginT">
                 <div class="linha_vertical">
                     <span class="titulo_login">Login no sistema<small>Acessar como técnico</small></span>
                 </div>

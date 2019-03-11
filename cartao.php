@@ -51,6 +51,7 @@
                 $_SESSION['statusPedido'] = $_SESSION['chamado'][2];
 
                 switch ($_SESSION['chamado'][2]) {
+                    
                     case 'Urgente': ?>
                         <?php if ($_SESSION['chamado'][1] != $_SESSION['idUser']) { ?>
 
@@ -96,10 +97,57 @@
                                 <span class="titulo_status">Concluído</span>
                             </div>
 
-                        <?php }?>
-                        
+                        <?php }
+                    break;
 
-                <?php        break;
+                    case 'Normal': ?>
+                        <?php if ($_SESSION['chamado'][1] != $_SESSION['idUser']) { ?>
+
+                            <div class="status status_inicio" id="status_inicio">
+                                <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                                <span class="titulo_status">Início</span>
+                            </div>
+
+                            <div class="status status_modal" id="status_andamento">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                                <span class="titulo_status">Andamento</span>
+                            </div>
+
+                            <div class="status" id="status_feedback">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Feedback</span>
+                            </div>
+
+                            <div class="status" id="status_final">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Concluído</span>
+                            </div>
+
+                        <?php } else { ?>
+
+                            <div class="status status_inicio" id="status_inicio">
+                                <i class="fa fa-play-circle" aria-hidden="true" alt="teste"></i>
+                                <span class="titulo_status">Início</span>
+                            </div>
+
+                            <div class="status" id="status_andamento">
+                                <i class="fa fa-spinner" aria-hidden="true"></i>
+                                <span class="titulo_status">Andamento</span>
+                            </div>
+
+                            <div class="status" id="status_feedback">
+                                <i class="fa fa-comments-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Feedback</span>
+                            </div>
+
+                            <div class="status" id="status_final">
+                                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+                                <span class="titulo_status">Concluído</span>
+                            </div>
+
+                        <?php }
+                    break;
+
                     case 'Andamento': ?>
 
                         <?php if ($_SESSION['chamado'][1] != $_SESSION['idUser']) { ?>
@@ -146,11 +194,9 @@
                                 <span class="titulo_status">Concluído</span>
                             </div>
 
-                        <?php }?>
+                        <?php }
+                    break;
 
-                        
-
-                <?php        break;
                     case 'Feedback': ?>
 
                         <?php if ($_SESSION['chamado'][1] != $_SESSION['idUser']) { ?>
@@ -230,15 +276,17 @@
                 </span>
             </div>
 
-            <?php if ($_SESSION['chamado'][1] == $_SESSION['idUser']) { ?>
-            <form method="POST" action="">
-                    <div class="alinha_botao" id="linha_post">
-                    <div class="container_botao_post">
-                        <button type="submit" class="botao botao_icone editar_cartao" id="editar_cartao" name="editar_cartao"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</button>
-                        <button type="button" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao" value=""><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
+            <?php if ($_SESSION['chamado'][2] != 'Concluido') { ?>
+                <?php if ($_SESSION['chamado'][1] == $_SESSION['idUser']) { ?>
+                <form method="POST" action="">
+                        <div class="alinha_botao" id="linha_post">
+                        <div class="container_botao_post">
+                            <button type="submit" class="botao botao_icone editar_cartao" id="editar_cartao" name="editar_cartao"><i class="fa fa-pencil" aria-hidden="true"></i>Editar</button>
+                            <button type="button" class="botao botao_icone deletar_cartao" id="deletar_cartao" name="deletar_cartao" value=""><i class="fa fa-trash-o" aria-hidden="true"></i>Excluir</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+                <?php } ?>
             <?php } ?>
 
             <div id="caixaComentarios">

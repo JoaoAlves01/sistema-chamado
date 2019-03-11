@@ -14,6 +14,7 @@
     $listarQtdConcluido = listarQtdConcluido();
 
     $chamado_urgentes = listarChamado('urgente');
+    $chamado_normal = listarChamado('Normal');
     $chamado_andamentos = listarChamado('andamento');
     $chamado_concluidos = listarChamadoConcluido();
 
@@ -36,39 +37,6 @@
     <?php include 'cabecalho_cartao.php'; ?>
 
         <div class="linha" id="container_cartao">
-
-            <!-- Box chamado novo -->
-            <div class="box_pedido normal" id="normal" data-id="normal">
-                <div class="linha">
-                    <span class="titulo_box">Pedidos Abertos</span>
-                </div>                
-                <div class="capsula_pedidos normal_scroll">
-
-                    <?php 
-                    while ($resul = $chamado_urgentes->fetch_array(MYSQLI_NUM)) {
-                        if ($_SESSION['idUser'] != $resul[1]) {
-                    ?>
-                    <!-- item Cartao -->
-                        <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
-                            <div class="box_solicitacao">
-                                <div class="linha_vertical">
-                                    <span class="titulo_cartao">
-                                        <?php echo $resul[3];  ?>
-                                    </span>
-                                </div>
-                                <div class="descricao_cartao">
-                                   <?php echo $resul[4];  ?>
-                                </div>
-                                <div class="tempo_cartao">
-                                    <i class="fa fa-clock-o" aria-hidden="true"><span><?php echo dataHoraBras($resul[5]);  ?></span></i>
-                                </div>
-                            </div>
-                        </a>
-                    <!-- Fim item Cartao -->
-                    <?php } } ?>
-
-                </div>            
-            </div>
 
             <!-- Card do chamado -->
             <div class="box_pedido urgente" id="urgente" data-id="urgente">
@@ -103,6 +71,39 @@
                 </div>            
             </div>
             <!-- Fim do chamado -->
+
+            <!-- Box chamado novo -->
+            <div class="box_pedido normal" id="normal" data-id="normal">
+                <div class="linha">
+                    <span class="titulo_box">Pedidos Abertos</span>
+                </div>                
+                <div class="capsula_pedidos normal_scroll">
+
+                    <?php 
+                    while ($resul = $chamado_normal->fetch_array(MYSQLI_NUM)) {
+                        if ($_SESSION['idUser'] != $resul[1]) {
+                    ?>
+                    <!-- item Cartao -->
+                        <a href="<?php echo 'cartao.php?id='.$resul[7]; ?>">
+                            <div class="box_solicitacao">
+                                <div class="linha_vertical">
+                                    <span class="titulo_cartao">
+                                        <?php echo $resul[3];  ?>
+                                    </span>
+                                </div>
+                                <div class="descricao_cartao">
+                                   <?php echo $resul[4];  ?>
+                                </div>
+                                <div class="tempo_cartao">
+                                    <i class="fa fa-clock-o" aria-hidden="true"><span><?php echo dataHoraBras($resul[5]);  ?></span></i>
+                                </div>
+                            </div>
+                        </a>
+                    <!-- Fim item Cartao -->
+                    <?php } } ?>
+
+                </div>            
+            </div>
 
             <div class="box_pedido andamento" id="andamento" data-id="andamento">
                 <div class="linha">
